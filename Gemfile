@@ -56,8 +56,6 @@ group :development do
   gem 'annotate', '~> 3.1.1'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-
-
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13.0'
   gem 'rspec-rails', '~> 4.0.1'

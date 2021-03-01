@@ -13,6 +13,11 @@
 class Formulario < ApplicationRecord
   include SelectConcern
 
+  has_many :formulariosobservaciones
+  has_many :formulariosobsusers
+
+  validates_presence_of :titulo
+
   def full_titulo
     <<~HTML
       #{titulo}
