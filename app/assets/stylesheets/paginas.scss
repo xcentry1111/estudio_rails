@@ -1,0 +1,749 @@
+// Place all the styles related to the paginas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+:root{
+  --fondoPrimario: #323941;
+  --fondoSecundario: #1A1E21;
+  --azulPrimario: #3860EC;
+  --azulSecundario: #2247ce;
+}
+
+.login{
+  background: var(--fondoPrimario);
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.contenedor{
+  background: var(--fondoSecundario);
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.logo{
+  width: 100%;
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
+}
+
+img{
+  width: 70%;
+}
+
+.dialogo{
+  background: var(--fondoPrimario);
+  padding: 25px;
+  color: #fff;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  font-size: 18px;
+  line-height: 28px;
+  position: relative;
+}
+
+/* pseudoelementos css - sirve para cambiar el color de seleccion*/
+
+.dialogo::selection{
+  background: #D61A1A;
+}
+
+/* pseudoelementos css - sirve para colocar el triaungo debajo del dialogo */
+
+.dialogo::after{
+  content: "";
+  display: block;
+  border-top: 20px solid var(--fondoPrimario);
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  position: absolute;
+  bottom: -40px;
+  right: calc(50% - 20px);
+}
+
+
+.boton{
+  width: 100%;
+  background: var(--azulPrimario);
+  display: inline-block;
+  padding: 25px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: .3s ease all;
+}
+
+
+.boton:hover {
+  background: var(--azulSecundario);
+}
+
+.enlace {
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: #D4D4D4;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.enlace:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/************************************************************
+  grids
+************************************************************/
+
+
+.login-grid{
+  background: #eee;
+  color:#000;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.gd_header p{
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* 1 */
+.gd_contenedor{
+  width: 90%;
+  max-width: 1000px;
+  border: 10px solid #000;
+  margin:auto;
+  font-size: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.gd_contenedor > div{
+  display: block;
+  padding: 20px;
+  color: #fff;
+  background: #2f89fc;
+  box-shadow: 2px 2px 10px rgba(0,0,0,.25);
+}
+
+
+/* 2  grid colums y row */
+.gd_contenedor2{
+  width: 90%;
+  max-width: 1000px;
+  border: 10px solid #000;
+  margin:auto;
+  font-size: 50px;
+  text-align: center;
+  line-height: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1px;
+  margin-top: 10px;
+}
+
+.gd_contenedor2 > div{
+  display: block;
+  padding: 20px;
+  color: #fff;
+  background: #2f89fc;
+  box-shadow: 2px 2px 10px rgba(0,0,0,.25);
+}
+
+
+.gd_contenedor2 div img{
+  height: 200px;
+  width: 200px;
+}
+
+/* 3 repeat */
+
+.gd_contenedor3{
+  width: 70%;
+  border: 10px solid #000;
+  margin: 10px auto;
+  font-size: 30px;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 600px repeat(2, 1fr);
+  grid-template-rows: repeat(4, 2fr);
+  grid-gap: 3px;
+}
+
+.gd_contenedor3 > div{
+  background: #2f89fc;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 4 Posicionamiento */
+
+.gd_contenedor4{
+  width: 50%;
+  border: 5px solid #000;
+  margin: 10px auto;
+  font-size: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.gd_contenedor4 > div{
+  background: #2f89fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.gd_contenedor4 .item4{
+  background: #B00100;
+  /* grid-column: 1 / span 3; */
+  /* grid-column: 1 / 2; */
+  grid-row: 1 / span 3;
+}
+
+
+/* 5 area  */
+
+.gd_contenedor5{
+  width: 50%;
+  border: 5px solid #000;
+  margin: 10px auto;
+  font-size: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: "header header header"
+                        "siderbar-1 contenido siderbar-2"
+                        "siderbar-1 widgets siderbar-2"
+                        "footer footer footer";
+  grid-gap: 20px;
+}
+
+
+.gd_contenedor5 > div{
+  background: #2f89fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.gd_contenedor5 .header{
+  background: #ff8000;
+  grid-area: header;
+}
+
+.gd_contenedor5 .siderbar-1{
+  background: red;
+  grid-area: siderbar-1;
+}
+
+.gd_contenedor5 .contenido{
+  background: #ff8000;
+  grid-area: contenido;
+}
+
+.gd_contenedor5 .siderbar-2{
+  background: yellowgreen;
+  grid-area: siderbar-2;
+}
+
+.gd_contenedor5 .widgets{
+  background: indigo;
+  grid-area: widgets;
+}
+
+.gd_contenedor5 .footer{
+  background: #2f89fc;
+  grid-area: footer;
+}
+
+/* Diseño 6 */
+
+.gd_contenedor6{
+  width: 90%;
+  border: 5px solid #000;
+  margin: 10px auto;
+  font-size: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "nav         nav         nav       nav"
+                       "siderbar    siderbar    lateral   lateral"
+                       "siderbar-2  siderbar-2  lateral   lateral"
+                       "slip        slip-2      slip-3    slip-4"
+                       "footer      footer      footer    footer";
+  grid-gap: 5px;
+}
+
+.gd_contenedor6 > div{
+  background: #2f89fc;
+  box-shadow: 1px 1px 20px rgba(0,0,0,.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gd_contenedor6 .nav{
+  background: #ff8000;
+  grid-area: nav;
+}
+
+.gd_contenedor6 .siderbar{
+  background: #3860EC;
+  grid-area: siderbar;
+}
+
+.gd_contenedor6 .lateral{
+  background: #3860EC;
+  grid-area: lateral;
+}
+
+.gd_contenedor6 .siderbar-2{
+  background: green;
+  grid-area: siderbar-2;
+}
+
+.gd_contenedor6 .slip{
+  background: indigo;
+  grid-area: slip;
+  color: #fff;
+}
+
+.gd_contenedor6 .slip-2{
+  background: red;
+  grid-area: slip-2;
+  color: #fff;
+}
+
+.gd_contenedor6 .slip-3{
+  background: indigo;
+  grid-area: slip-3;
+  color: #fff;
+}
+
+.gd_contenedor6 .slip-4{
+  background: red;
+  grid-area: slip-4;
+  color: #fff;
+}
+
+.gd_contenedor6 .footer{
+  background: black;
+  grid-area: footer;
+  color: #fff;
+}
+
+/* Diseño 2*/
+
+.gd_contenedor7{
+  width: 90%;
+  border: 5px solid black;
+  margin: 20px auto;
+  font-size: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100px 250px 400px 150px;
+
+  grid-template-areas: "nav7 nav7 nav7 nav7 nav7 nav7"
+                       "carousel carousel carousel carousel promo promo"
+                       "tegn tegn tegn tegn tegn tegn"
+                       "footer7 footer7 footer7 footer7-1 footer7-1 footer7-1";
+  grid-gap: 5px;
+}
+
+.gd_contenedor7 > div{
+  background: #2f89fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gd_contenedor7 .nav7{
+  background: #000;
+  color: #fff;
+  grid-area: nav7;
+}
+
+.gd_contenedor7 .carousel{
+  background: #3860EC;
+  color: #fff;
+  grid-area: carousel;
+}
+
+.gd_contenedor7 .promo{
+  background: green;
+  color: #fff;
+  grid-area: promo;
+}
+
+.gd_contenedor7 .tegn{
+  background: indianred;
+  color: #fff;
+  grid-area: tegn;
+}
+
+.gd_contenedor7 .footer7{
+  background: black;
+  color: #fff;
+  grid-area: footer7;
+}
+
+.gd_contenedor7 .footer7-1{
+  background: black;
+  color: #fff;
+  grid-area: footer7-1;
+}
+
+
+/* diseño 3*/
+
+h1{
+  width: 95%;
+  margin: 0px auto;
+}
+
+.gd_contenedor8{
+  width: 95%;
+  border: 0px solid #000;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 400px;
+  grid-template-rows: 80px 400px;
+  grid-template-areas: "nav8 nav8 nav8 nav8pet"
+                       "carousel8 carousel8 carousel8 promo8";
+  grid-gap: 5px;
+}
+
+.gd_contenedor8 > div{
+  background: #2f89fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gd_contenedor8 .nav8{
+  background: black;
+  color: #fff;
+  grid-area: nav8;
+}
+
+.gd_contenedor8 .nav8pet{
+  background: indianred;
+  color: #fff;
+  grid-area: nav8pet;
+}
+
+.gd_contenedor8 .carousel8{
+  background: red;
+  color: #fff;
+  grid-area: carousel8;
+}
+
+.gd_contenedor8 .promo8{
+  background: yellowgreen;
+  color: #fff;
+  grid-area: promo8;
+}
+
+
+.gd_contenedor9{
+  width: 95%;
+  border: 0px solid #000;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: 400px 20ppx;
+  grid-template-rows: 130px;
+  grid-template-areas: "footer8 footer8 footer8 footer8";
+  grid-gap: 5px;
+}
+
+.gd_contenedor9 > div{
+  background: #2f89fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Alinear elementos */
+.gd_contenedor10{
+  width: 90%;
+  max-width: 1000px;
+  border:10px solid #000;
+  margin: auto;
+  font-size: 50px;
+  line-height: 50px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 200px);
+  grid-gap: 10px;
+  /* Permite alinear elemento de forma horizontal */
+  justify-items: center;
+/* Permite alinear el elemento de forma vertical */
+  align-items: center;
+}
+.gd_contenedor10 > div{
+  display: block;
+  padding: 20px;
+  color: #fff;
+  background: #2f89fc;
+  box-shadow: 2px 2px 10px rgba(0,0,0,.25);
+}
+
+
+.gd_contenedor10 .item10{
+  background: #ff8000;
+  /* con self sive para acceder solo a ese elemento */
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+
+/* justify-items   --> sirve para alinear horizontalmente
+  align-items  ---> sirve para alinear verticalmanete  y es utilizado el el padre de grid
+
+  justify-self --> sirve para alienar horizontal solo al elemento especifico
+  align-self --> sirve para alinear vertical solo para el elemento items10
+*/
+
+
+/* Alinear Track */
+
+.gd_contenedor11{
+  width: 90%;
+  max-width: 1000px;
+  border:10px solid #000;
+  margin: auto;
+  font-size: 50px;
+  line-height: 50px;
+  text-align: center;
+  display: grid;
+  grid-gap: 20px;
+  height: 800px;
+
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(3, 150px);
+
+  /* Alinea Horizontalmente */
+  justify-content: space-evenly;
+
+  /* Alinea Verticalmente */
+  align-content: space-evenly;
+}
+
+.gd_contenedor11 > div{
+  display: block;
+  padding: 20px;
+  color: #fff;
+  background: #2f89fc;
+  box-shadow: 2px 2px 10px rgba(0,0,0,.25);
+}
+
+
+/* Grid  implicita */
+
+.gd_contenedor12{
+  width: 90%;
+  max-width: 1000px;
+  border:10px solid #000;
+  margin: auto;
+  font-size: 50px;
+  line-height: 50px;
+  text-align: center;
+  display: grid;
+  grid-gap: 20px;
+
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: 200px 100px 200px;
+
+  /* sirve para las filas que no estan determinadas y el resto por defecto toma 300px */
+  grid-auto-rows: 300px;
+
+}
+
+.gd_contenedor12 > div{
+  display: block;
+  padding: 20px;
+  color: #fff;
+  background: #2f89fc;
+  box-shadow: 2px 2px 10px rgba(0,0,0,.25);
+}
+
+
+
+/* Grid  PARA MOVILES */
+
+/* auto-fill */
+.gd_contenedor13{
+  width: 90%;
+  max-width: 1000px;
+  border:10px solid #000;
+  margin: auto;
+  font-size: 50px;
+  line-height: 50px;
+  text-align: center;
+  display: grid;
+  grid-gap: 20px;
+  /* grid-template-columns: repeat(4, minmax(100px, 1fr)); */
+  /* auto-fill llega todas las columnas que le quepan */
+
+  /*auto fill (lo que hace es que si hay una div de 100% y no se ocupa todo, solo toma el valor de minmax) mientras que auto-fit, abarca todo el cuadro y se acomoda  */
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+
+}
+
+.gd_contenedor13 > div{
+  display: block;
+  padding: 20px;
+  color: #fff;
+  background: #2f89fc;
+  box-shadow: 2px 2px 10px rgba(0,0,0,.25);
+}
+
+
+/* auto-fit */
+.gd_contenedor14{
+  width: 90%;
+  max-width: 1000px;
+  border:10px solid #000;
+  margin: auto;
+  font-size: 50px;
+  line-height: 50px;
+  text-align: center;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+}
+
+.gd_contenedor14 > div{
+  display: block;
+  padding: 20px;
+  color: #fff;
+  background: #2f89fc;
+  box-shadow: 2px 2px 10px rgba(0,0,0,.25);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contenedor2 {
+  max-width: 1000px;
+  width: 90%;
+  margin: auto;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+header h3 {
+  color: #5A5A5A;
+}
+
+header h1 {
+  font-size: 60px;
+  font-weight: normal;
+}
+
+.publicaciones {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(1, auto 1fr auto);
+  gap: 20px;
+}
+
+.publicacion {
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(194,194,194,.25);
+  border-radius: 5px;
+
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: auto 1fr auto;
+  grid-template-rows: subgrid;
+
+  grid-column: span 3;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: subgrid;
+}
+
+.publicacion .titulo {
+  color: #C00000;
+  font-size: 32px;
+  margin: 0;
+  grid-column: span 3;
+}
+
+.publicacion .texto {
+  line-height: 28px;
+  color: #1E1E1E;
+  margin: 0;
+  grid-column: span 3;
+}
+
+.publicacion .botones {
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+.publicacion button {
+  margin-right: 20px;
+
+  text-align: left;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.publicacion button.comentario i {color: #00C2FF;}
+.publicacion button.favoritos i {color: #FF0000;}
+.publicacion button.retweets i {color: #40C800;}
+
+@media screen and (max-width: 850px) {
+  .publicaciones {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .publicacion {
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .publicacion .texto {
+    margin: 20px 0;
+  }
+}

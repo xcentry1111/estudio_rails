@@ -1,0 +1,1717 @@
+---
+es:
+  activemodel:
+    attributes:
+      bulk_invitation_form:
+        custom_message: Mensaje
+        email: Correo electrónico
+        name: Nombre
+      enrollment_form:
+        attended_insead_open_enrollment_programme: "¿Has asistido a un programa de inscripción abierta de INSEAD?"
+        attended_other_insead_online_course: "¿Has asistido a otro curso online de INSEAD?"
+        company_name: Compañía
+        country_of_residence_code: País de Residencia
+        current_annual_compensation_usd: Salario anual actual
+        current_career_stage: Etapa profesional actual
+        current_job_function: Trabajo actual
+        email: Correo electrónico
+        first_name: Primer nombre
+        gender: Género
+        job_title: Puesto / Cargo
+        last_name: Apellido
+        mobile: Teléfono
+        nationality_code: Nacionalidad
+        nationality_same_as_residence: "¿Eres ciudadano del país?"
+        open_enrollment_programme_name: Nombre del programa
+        open_enrollment_programme_year: Año
+        other_programme_name: Nombre del programa
+        other_programme_year: Año
+        residential_address: Dirección
+        residential_city: Ciudad
+        residential_state: Estado / Provincia / Región
+        residential_zip_code: Código postal
+        salutation: Título
+        sector_of_activity: Sector de actividad
+        work_experience_year: Años
+        your_function: Función laboral
+        your_function_other: Función laboral (otros)
+        your_industry: Industria
+        your_industry_other: Industria (otros)
+      learner/profile_form:
+        about_me: Acerca de mí
+        city: Ciudad
+        country: País
+        current_company: Compañía
+        current_role: Cargo
+        email: Email
+        email_visible: Hacer mi email visible para los estudiantes del curso
+        first_name: Nombre
+        industry: Industria
+        job_function: Trabajo actual
+        last_name: Apellido
+        linked_in_profile_url: URL Perfil de LinkedIn
+        state: Estado
+      support_request_form:
+        canvas_course: Curso de Canvas
+        canvas_course_url: URL del Curso de Canvas
+        description: Cuéntanos más acerca de cómo podemos ayudarte
+        email: Tu dirección de correo electrónico
+        query_type: Elige un tema
+        subject: Asunto
+    errors:
+      messages:
+        record_invalid: El registro contiene información inválida y no puede ser guardado.
+      models:
+        admin/users_import_form:
+          attributes:
+            csv_file:
+              content_type: debe ser de formato %{content_types}
+        registration_form:
+          attributes:
+            country:
+              inclusion: Lo sentimos, este curso no está disponible en tu región.
+    models:
+      salesforce/enrollments:
+        one: Inscripción
+        other: Inscripciones
+  activerecord:
+    errors:
+      models:
+        google_analytics_tag:
+          attributes:
+            base:
+              already_another_enabled: Ya existe otro tag habilitado
+        learner/content/canvas_link:
+          attributes:
+            image:
+              content_type: tipo no soportado
+        learner/content/external_link:
+          attributes:
+            image:
+              content_type: tipo no soportado
+        learner/profile:
+          attributes:
+            image:
+              content_type: El archivo subido no es válido como imagen de perfil
+        marketing/landing_page_template:
+          attributes:
+            program:
+              from_institution: debe pertenece a la institución académica
+        salesforce/lead:
+          full_name: Primer Nombre + Apellido debe ser de %{length} caracteres como máximo
+        school:
+          attributes:
+            favicon:
+              content_type: debe ser de formato %{content_types}
+            logo_email:
+              content_type: debe tener formato %{content_types}
+            logo_web:
+              content_type: debe tener formato %{content_types}
+            secondary_logo_web:
+              content_type: debe tener formato %{content_types}
+        user:
+          attributes:
+            email:
+              taken: Una cuenta con este correo ya existe.
+            password_confirmation:
+              confirmation: la contraseña no coincide.
+    models:
+      profile:
+        one: Perfil
+        other: Perfiles
+      salesforce/enrollments:
+        one: Inscripción
+        other: Inscripciones
+  admin:
+    actions:
+      back_to_index: Volver al índice
+    admin_users:
+      form:
+        email_update_error: es inválido (no puede actualizar el email).
+        role_create_error: es inválido (no puede crear un super admin).
+        role_update_error: es inválido (no puede actualizar a super admin).
+      generate_new_password:
+        success: La nueva contraseña fue generada correctamente. Un mail fue enviado para notificar al admin.
+      pluggable_show_footer:
+        button_generate_new_password: Generar Nueva Contraseña
+        button_reset_two_factor_authentication: Resetear 2FA
+        confirmation_generate_new_password: "¿Estás seguro que deseas generar una nueva contraseña para este admin?"
+        confirmation_reset_two_factor_authentication: "¿Estás seguro que deseas resetear la autenticación de dos factores para este usuario?"
+      reset_two_factor_authentication:
+        success: Su autenticación de 2 factores fue reseteada. Puede ser configurada nuevamente en el próximo login.
+    composite:
+      online_degrees_admin:
+        enrollment:
+          may_not_accept: Solo las aplicaciones con documentos y referencias completadas, y que estén bajo revisión de comité de admisión pueden ser aceptadas
+          may_not_decline: Solo las aplicaciones que estén bajo admisión concedida pueden ser declinadas
+          may_not_reject: Solo las aplicaciones que estén bajo revisión de comité de admisión pueden ser rechazadas
+          may_not_send_for_university_review: Solo las aplicaciones que estén bajo revisión pueden ser enviadas para revisión de la universidad
+    course_preview:
+      parent_page_not_found: No se encontró la página principal para la vista previa del curso
+    enrollment_forms:
+      fieldsets:
+        create:
+          success: Campo agregado correctamente.
+        destroy:
+          success: Campo removido correctamente.
+        form:
+          name: Nombre Formulario de Aplicación
+          section_title: Título Sección
+          step_title: Título Paso
+        update:
+          success: Campo actualizado correctamente.
+      forms:
+        pluggable_show_footer:
+          new_step: Nuevo Paso
+      sections:
+        destroy:
+          success: Sección borrada correctamente.
+        form:
+          name: Nombre Formulario de Aplicación
+          step_title: Título Paso
+        pluggable_show_footer:
+          new_section_fieldset: Nuevo Campo
+      steps:
+        destroy:
+          success: Paso borrado correctamente.
+        form:
+          name: Nombre Formulario de Aplicación
+        pluggable_show_footer:
+          new_section: Nueva Sección
+    general:
+      export: Exportar a csv
+    learner:
+      content:
+        video_playlists:
+          pluggable_show_footer:
+            add_video: Agregar Video
+      course_modules:
+        destroy:
+          success: Módulo removido correctamente.
+        form_body:
+          course_name: Nombre Curso
+        pluggable_show_footer:
+          new_module_task: Nueva Tarea
+      courses:
+        pluggable_show_footer:
+          new_course_module: Nuevo Módulo
+      module_task_items:
+        destroy:
+          success: Item del Módulo removido correctamente.
+        form_body:
+          course_module_name: Nombre Módulo Curso
+          course_name: Nombre Curso
+          module_task_name: Nombre Tarea
+      module_tasks:
+        destroy:
+          success: Tarea removida correctamente.
+        form_body:
+          course_module_name: Nombre Módulo
+          course_name: Nombre Curso
+        pluggable_show_footer:
+          new_module_task_item: Nuevo Item del Módulo
+    marketing:
+      landing_page_templates:
+        optimize:
+          error: Falló debido a
+          success: Experimentos fueron creados con éxito
+        pluggable_show_footer:
+          toggle_revisions_confirm: "¿Está seguro que quiere cambiar las revisiones?"
+          toggle_revisions_disabled: Deshabilitar Revisiones
+          toggle_revisions_enabled: Habilitar Revisiones
+        pluggable_show_header:
+          optimize: Optimizar
+          optimize_confirm: "¿Está seguro que quiere optimizar esta página?"
+        show:
+          successfully_published: Publicado con éxito
+      publish_revision_form:
+        errors:
+          published_revision_must_be_different: no se puede republicar la revisión porque es la revisión pública actualmente
+      publish_revisions:
+        publish:
+          error: 'La revisión no fue publicada debido a: %{errors}'
+          success: Revisión publicada exitósamente
+      revisions:
+        create: La revisión será creada en breve
+        errors:
+          delete_published_revision: La revisión se encuentra actualmente publicada, no puede ser borrada.
+          no_landing_page: Landing page template no puede ser vacia.
+        pluggable_show_header:
+          confirm: "¿Estás seguro?"
+          publish: Publicar revisión
+    paper_trail:
+      versions:
+        pluggable_show_header:
+          confirmation: "¿Estás seguro de que deseas volver a esta versión?"
+          rollback: Revertir
+        rollback:
+          destroy_error_message: No se puede destruir el modelo usando la funcionalidad de restauración
+          error: Ocurrió un error al intentar restaurar a la versión especificada<br>%{errors}
+          success: La versión fue restaurada correctamente
+    payment_plan_form:
+      errors:
+        days_between_installments: es inválido (algunas cuotas pueden estar excediendo la fecha de termino del curso). Verifique que sea mayor a 1.
+        down_payment_percentage: es inválido (algunas cuotas quedan sin monto).
+    payment_plans:
+      create:
+        success: El plan de pago fue creado correctamente.
+      destroy:
+        success: El plan de pago fue borrado correctamente.
+      edit:
+        batch_end_date: Fecha fin de curso
+        batch_start_date: Fecha inicio de curso
+        subtitle_installments: Cuotas
+        subtitle_payment_plan: Plan de pagos
+      form:
+        course_price: Precio base del curso
+        days_between_installments_label: Cantidad de días entre cuotas
+        down_payment_percentage_label: Porcentaje de pago inicial
+        fee_percentage_label: Porcentaje de comisión
+        number_of_installments_label: Número de cuotas
+      installments_form:
+        button_update_installments: Actualizar cuotas
+        confirmation_update_installments: "¿Estás seguro?"
+        label_due_date: Fecha de pago (#%{number})
+        label_percentage_amount: "% Monto (#%{number})"
+      show:
+        label_due_date: Fecha de pago (#%{number})
+        label_percentage_amount: Monto (#%{number})
+        subtitle_installments: Cuotas
+        subtitle_payment_plan: Plan de pagos
+      update:
+        success: El plan de pago fue actualizado correctamente.
+      update_installments:
+        error: Error al actualizar las cuotas. Verifique que los montos sumen 100, que las fechas estén entre la fecha de inicio y fin del curso, y que haya al menos %{number} días entre ellas.
+        success: Las cuotas se actualizaron correctamente.
+    payments:
+      edit:
+        payment_subtitle: Información del pago
+        refund_subtitle: FORMULARIO DE REEMBOLSO
+        title: Reembolsar %{payment_name}
+      pluggable_show_footer:
+        receipt: Ver Recibo
+        refund: Reembolsar
+      refund:
+        error: Ha ocurrido un error al intentar reembolsar el pago
+        success: El pago ha sido reembolsado con éxito
+      refund_form:
+        amount_label: Monto
+        confirmation: "¿Estás seguro que quieres reembolsar el pago?"
+        reason_label: Motivo
+        refund: Reembolsar
+        restrict_admission_label: "¿Declinar Admisión?"
+    programs:
+      enable:
+        error: Oops. Lo sentimos, pero ocurrió un error.
+        success: Los programas han sido actualizados correctamente.
+    reference_forms:
+      fieldsets:
+        create:
+          success: Campo agregado correctamente.
+        destroy:
+          success: Campo removido correctamente.
+        form:
+          name: Nombre Formulario de Referencia
+          section_title: Título Sección
+        update:
+          success: Campo actualizado correctamente.
+      forms:
+        pluggable_show_footer:
+          new_section: Nueva Sección
+      sections:
+        destroy:
+          success: Sección borrada correctamente.
+        form:
+          name: Nombre Formulario de Referencia
+        pluggable_show_footer:
+          new_section_fieldset: Nuevo Campo
+    salesforce:
+      batches:
+        clone:
+          error: No se ha podido clonar la configuración. Por favor, inténtelo nuevamente.
+          success: La configuración del último batch ha sido clonada con éxito. Por favor, corrobore que los datos sean correctos.
+        pluggable_show_footer:
+          clone_last_batch_configuration: Copiar la configuración del último batch
+          new_payment_plan: Nuevo Plan de Pago
+    users:
+      generate_new_password:
+        success: La nueva contraseña del usuario es %{new_password}
+      pluggable_show_footer:
+        button_generate_new_password: Generar Nueva Contraseña
+        confirmation_generate_new_password: "¿Estás seguro que deseas generar una nueva contraseña para este usuario?"
+      update:
+        success: El usuario fue actualizado correctamente.
+    users_import:
+      create:
+        success: Archivo de usuarios importados subido correctamente.
+      new:
+        account_creation: Creación de cuenta
+      perform:
+        alert: Error inesperado. Por favor intentalo mas tarde.
+        success: Usuarios e inscripciones importados correctamente.
+    video_placements:
+      create:
+        success: Video agregado correctamente.
+      destroy:
+        success: Video removido correctamente.
+      form_body:
+        record_class: Clase del registro
+        record_name: Nombre del registro
+  admin_panel: Admin Panel
+  admin_users:
+    sessions:
+      authenticate_via_otp:
+        invalid_code: Invalid code
+      create:
+        invalid_code: Código inválido
+      two_factor:
+        code: Código
+        continue: Continuar
+        title: Autenticación de dos pasos
+    two_factor_authentications:
+      create:
+        invalid_code: Código inválido
+      new:
+        code: Código
+        enable: Habilitar
+        enable_two_factor: Habilitar autenticación de dos pasos
+  advocate_reward_mailer:
+    credit_earned:
+      cta: Invita más amigos y ahorra
+      disclaimer: Para que su reembolso sea aprobado, tienes que estar inscripto en el curso, y tus amigos deben permanecer inscriptos en el curso pasado el período de devolución de %{refund_period} días.
+      farewell: Gracias!
+      multiple_rewards_reminder: Recuerda, recibirás múltiples recompensas invitando múltiples personas.
+      salutation: Hola,
+      subject: Tus %{amount} están en camino.
+      with_creditable_enrollments:
+        body: Tu amigo invitado, %{friend_name}, se ha unido a %{program_description}. Si permanece inscripto hasta el final de nuestro período de devolución (%{refund_period_end}), obtendrás automáticamente un reembolso de %{amount} en tu compra.
+      without_creditable_enrollments:
+        body: Tu amigo invitado, %{friend_name}, se ha unido a %{program_description}. Si permanece inscripto hasta el final de nuestro período de devolución (%{refund_period_end}) y tú te unes a cualquiera de estos cursos elegibles, obtendrás automáticamente un reembolso de %{amount} en tu compra.
+        join_these: 'Tu reembolso puede ser aplicado a cualquiera de estos programas:'
+    credit_processed:
+      amount_left: 'Aún hay %{balance} de su recompensa por haber invitado a %{friend_name} esperando por ti. Puedes aplicarlo a cualquiera de estos cursos:'
+      contact_us: Por favor <a href="mailto:%{email_contact_us}">contáctanos</a> si tienes alguna pregunta.
+      credit_refunded: Esto significa que %{refunded_amount} te han sido automáticamente reembolsados a tu cuenta. Este reembolso aparecerá en tu estado cuenta como %{statement_descriptor}.
+      cta: Invita más amigos y ahorra
+      farewell: Gracias!
+      friend_persisted: Tu amigo invitado, %{friend_name}, ha permanecido inscripto en %{program_description} durante nuestro período de devolución (%{refund_period_end}).
+      salutation: Hola,
+      subject: Tus %{refunded_amount} de recompensa te han sido automáticamente reembolsados.
+    credit_ready:
+      body: 'Tu amigo invitado, %{friend_name}, ha permanecido inscripto en %{program_description} durante nuestro período de devolución (%{refund_period_end}). Ahora tienes %{amount} de descuento como recompensa para unirte a cualquiera de los siguientes cursos de %{school_name}:'
+      disclaimer: Tu recompensa va a ser automáticamente devuelta a tu cuenta bancaria al finalizar tu compra.
+      farewell: Gracias!
+      salutation: Hola,
+      subject: Tienes %{amount} de descuento para usar en cualquiera de los cursos de %{school_name}
+  batch_enrollments:
+    edit:
+      title: Inscripción
+    form:
+      about_you: Sobre ti
+      additional_information: Información adicional
+      course_preview_v2_info: La información a continuación nos ayudará a optimizar su experiencia de aprendizaje mediante la creación de secciones y equipos.
+      current_annual_compensation_usd:
+        above_usd_200_000: Por encima de USD 200.000
+        below_usd_50_000: Por debajo de USD 50.000
+        usd_100_001_to_usd_150_000: Entre USD 100.001 y USD 150.000
+        usd_150_001_to_usd_200_000: Entre USD 150.001 y USD 200.000
+        usd_50_001_to_usd_100_000: Entre USD 50.001 y USD 100.000
+      errors: Por favor complete la información requerida
+      mandatory_fields: Todos los campos son obligatorios a menos que se indique lo contrario.
+      nationality_radio:
+        'no': 'No'
+        'yes': Sí
+      required_fields: Todos los campos son requeridos
+      salutation:
+        mr: Sr.
+        mrs: Sra. de
+        ms: Sra.
+      some_required_fields: Todos los campos son requeridos a menos que se indique lo contrario
+      submit: Siguiente
+      title: Inscripción
+      your_function:
+        accounting_and_control: Contabilidad y control
+        consulting: Consultoría
+        customer_support_service: Atención al cliente / Servicio
+        engineering: Ingeniería
+        finance: Finanzas
+        general_management: Administración general
+        human_resources_management: Administración de recursos humanos
+        information_technology: Tecnologías de la información
+        learning_and_development: Aprendizaje y desarrollo
+        legal: Legal
+        logistics_purchasing: Logística / Compras
+        manufacturing_and_operations: Fabricación y operaciones
+        marketing_communications_pr: Marketing / Comunicaciones / Relaciones públicas
+        medical: Médico
+        project_management: Gestión de proyectos
+        research_and_development: Investigación y desarrollo
+        sales_and_business_development: Ventas y desarrollo comercial
+        strategy_corporate_planning: Estrategia / Planificación Corporativa
+      your_industry:
+        advertising: Publicidad
+        agriculture: Agricultura
+        banking_and_financial_services: Bancos y servicios financieros
+        civil_construction: Construcción civil
+        consulting: Consultoría
+        ecommerce: E-commerce
+        education: Educación
+        electronics_or_hardware: Electrónica / Hardware
+        energy: Energía
+        fast_moving_consumer_goods: Bienes de consumo de rápido movimiento
+        healthcare: Cuidado de la salud
+        human_resources_service_provider: Proveedor de servicios de recursos humanos
+        industrial_goods: Bienes industriales
+        it_products: Productos de informática
+        it_services: Servicios de informática
+        media: Media
+        other: Otros
+        real_estate: Bienes raíces
+        retail: Ventas
+        telecommunications: Telecomunicaciones
+        tourism_or_hotels_or_restaurant: Turismo / Hoteles / Restaurants
+        transport_or_logistic: Transporte - Logística
+      your_position:
+        cxo_roles: CM, MD, CEO, CFO, COO u otro CXO role
+        other: Otra posición (Por favor especifique)
+        report_to_cxo: Reporta directamente a un de los roles de arriba
+      your_work_experience: Tu experiencia laboral
+    insead_executive_education:
+      extended_form:
+        current_career_stage:
+          board_member: Miembro del consejo
+          c_level_officer: Oficial nivel C
+          chair_of_board: Jefe del consejo
+          director: Director
+          general_manager: Gerente general (país/región/división)
+          head_of_function: Jefe de función
+          manager_supervisor: Gerente/Supervisor
+          senior_executive_management: Senior/Dirección Ejecutiva
+          staff_associate: Staff/Asociado
+        current_job_function:
+          board_member: Contabilidad y control
+          consulting: Consultoría
+          customer_support_service: Servicio/apoyo al cliente
+          engineering: Ingeniería
+          finance: Finanzas
+          general_management: Administración general
+          human_resources_management: Administración de recursos humanos
+          information_technology: Tecnología de información
+          learning_and_development: Aprendizaje y desarrollo
+          legal: Legal
+          logistics_purchasing: Logística/Compras
+          manufacturing_and_operations: Manufactura y operaciones
+          marketing_communications: Mercadotecnia/Comunicación/RP
+          medical: Medicina
+          project_management: Administración de proyectos
+          research_and_development: Investigación y desarrollo
+          sales_and_business_development: Ventas y desarrollo de negocios
+          strategy_corporate_planning: Estrategia/Planeación corporativa
+        custom_note: "</p>Nota: Si estás solicitando el 3er programa online elegible para el Certificado online de INSEAD: Liderar en un mundo en transformación, por favor, <a href='mailto:ioc_contact@insead.edu' target='_blank'>contáctanos</a> para obtener el código del 'Certificado INSEAD Online' (reducción no acumulativa).</p>"
+        custom_privacy_policy: |-
+          <p><b>Tu privacidad</b></p>
+          <p>INSEAD se toma muy en serio tu privacidad. Por tal motivo, te informamos que los datos se procesan electrónicamente para los fines especificados en este formulario y no serán utilizados fuera de este marco.</p>
+          <p>De acuerdo con la Ley de Protección de Datos del 6 de enero de 1978 modificada por el GDPR, se le otorgan los derechos legales de acceso, modificación, actualización, eliminación y limitación del tratamiento de tus datos personales. Puedes ejercer estos derechos en cualquier momento escribiendo o enviando un correo electrónico a INSEAD a <a href="mailto:marketing.europe@insead.edu">marketing.europe@insead.edu</a>. Tienes derecho, por motivos legítimos, a oponerte a la recopilación y el procesamiento de tu información personal. Para más información por favor vea nuestra <a href='https://www.insead.edu/privacy-policy' target='_blank'>política de privacidad</a>.</p>
+        editable_email_insead_enrollment_programme: El correo electrónico proporcionado aquí se utilizará para actualizar cualquier correo electrónico anterior registrado en INSEAD.
+        follow_insead_online_certificate_text: Quiero seguir el certificado online de INSEAD.
+        gender:
+          female: Mujer
+          intersex: Intersexo
+          male: Hombre
+        radio_button:
+          'no': 'No'
+          'yes': Sí
+        sector_of_activity:
+          accounting: Contabilidad
+          agriculture: Agricultura
+          airlines_aviation: Aerolíneas/Aviación
+          alternative_dispute_resolution: Resolución alternativa de controversias
+          alternative_medicine: Medicina alternativa
+          animation: Animación
+          apparel_and_fashion: Ropa y moda
+          architecture_planning: Arquitectura y planeación
+          arts_and_crafts: Artes y oficios
+          automotive: Automotriz
+          aviation_and_aerospace: Aviación e industria aeroespacial
+          banking: Banca
+          biotechnology: Biotecnología
+          broadcast_media: Medios de comunicación
+          building_materials: Materiales de construcción
+          business_supplies_equipment: Suministros y equipo para empresas
+          capital_markets: Mercado de capitales
+          chemicals: Químicos
+          civic_social_organization: Organización cívica y social
+          civil_engineering: Ingeniería civil
+          commercial_real_estate: Inmuebles comerciales
+          computer_and_network_security: Seguridad informática y de red
+          computer_games: Juegos de computadora
+          computer_hardware: Hardware informático
+          computer_networking: Redes de computadoras
+          computer_software: Software informático
+          construction: Construcción
+          consumer_electronics: Productos electrónicos
+          consumer_goods: Bienes de consumo
+          consumer_services: Servicios al consumidor
+          corporate: Corporativo
+          cosmetics: Cosméticos
+          dairy: Lácteos
+          defense_space: Defensa y espacio
+          design: Diseño
+          e_learning: E-Aprendizaje
+          education_management: Gestión de la educación
+          educational: Educación
+          electrical_electronic_manufacturing: Manufactura Eléctrica/Electrónica
+          entertainment: Entretenimiento
+          environmental_services: Servicios ambientales
+          events_services: Servicio de eventos
+          executive_office: Oficina ejecutiva
+          facilities_services: Centros de servicios
+          farming: Cultivos
+          finance: Finanzas
+          financial_services: Servicios financieros
+          fine_art: Bellas artes
+          fishery: Pesca
+          food_beverages: Alimentos y bebidas
+          food_production: Producción de alimentos
+          fund_raising: Recaudación de fondos
+          furniture: Muebles
+          gambling_casinos: Apuestas y casinos
+          glass_ceramics_concrete: Vidrio, cerámica y concreto
+          government: Gobierno
+          government_administration: Administración gubernamental
+          government_relations: Relaciones gubernamentales
+          graphic_design: Diseño gráfico
+          health_wellness_and_fitness: Salud, bienestar y fitness
+          high_tech: Alta tecnología
+          higher_education: Educación superior
+          hospital_health_care: Hospital y cuidado de la salud
+          hospitality: Hospitalidad
+          human_resources: Recursos humanos
+          import_and_export: Importaciones y exportaciones
+          individual_and_family_services: Servicios individuales y familiares
+          industrial_automation: Automatización industrial
+          information_services: Servicios de información
+          information_tech_and_services: Tecnologías de información y servicios
+          insurance: Seguros
+          international_affairs: Política internacional
+          internet: Internet
+          intl_trade_and_development: Comercio internacional y desarrollo
+          investment_banking: Banca de inversión
+          investment_management: Administración de inversiones
+          judiciary: Poder judicial
+          law_enforcement: Orden público
+          law_practice: Práctica jurídica
+          legal: Legal
+          legal_services: Servicios legales
+          legislative_office: Oficina legislativa
+          leisure_travel_and_tourism: Placer, viajes y turismo
+          libraries: Librerías
+          logistics_and_supply_chain: Logística y cadena de suministro
+          luxury_goods_and_jewelry: Bienes de lujo y joyería
+          machinery: Maquinaria
+          management_consulting: Consultoría ejecutiva
+          manufacturing: Manufactura
+          maritime: Industria marítima
+          market_research: Investigación de mercados
+          marketing_and_advertising: Mercadotecnia y publicidad
+          mechanical_or_industrial_engg: Ing. mecánico o industrial
+          media: Medios
+          media_production: Producción de medios
+          medical: Medicina
+          medical_devices: Dispositivos médicos
+          medical_practice: Práctica médica
+          mental_health_care: Cuidado de la salud mental
+          military: Ejército
+          mining_metals: Minería y metales
+          motion_pictures_and_film: Cinematografía
+          museums_and_institutions: Museos e instituciones
+          music: Música
+          nanotechnology: Nanotecnología
+          newspapers: Prensa
+          non_profit_organization_mgt: Organizaciones sin fines de lucro
+          oil_energy: Petróleo y energía
+          online_media: Medios online
+          outsourcing_offshoring: Outsourcing/Offshoring
+          package_freight_delivery: Entrega de paquetes y fletes
+          packaging_and_containers: Envases y contenedores
+          paper_forest_products: Papel y productos forestales
+          performing_arts: Artes escénicas
+          pharmaceuticals: Farmacéuticas
+          philanthropy: Filantropía
+          photography: Fotografía
+          plastics: Plásticos
+          political_organization: Organización política
+          pr_and_communications: RP y comunicación
+          primary_secondary_education: Educación primaria/secundaria
+          printing: Impresión
+          private_equity: Capital privado
+          prof_training_coaching: Prof. entrenamiento y coaching
+          program_development: Desarrollo de programas
+          public_policy: Política pública
+          public_safety: Seguridad pública
+          publishing: Publicidad
+          railroad_manufacture: Fabricación de ferrocarriles
+          ranching: Ganadería
+          real_estate: Bienes raíces
+          recreational: Recreación
+          recreational_fac_and_services: Serv. recreativos o facultativos
+          religious_institutions: Instituciones religiosas
+          renewables_environment: Renovables y medio ambiente
+          research: Investigación
+          restaurants: Restaurantes
+          retail: Ventas
+          security_and_investigations: Seguridad e investigación
+          semiconductors: Semiconductores
+          service: Servicio
+          shipbuilding: Construcción naval
+          sporting_goods: Artículos deportivos
+          sports: Deportes
+          staffing_and_recruiting: Personal y reclutamiento
+          supermarkets: Supermercados
+          telecommunications: Telecomunicaciones
+          textiles: Textiles
+          think_tanks: Grupo de expertos
+          tobacco: Tabaco
+          translation_and_localization: Traducción y localización
+          transport_trucking_railroad: Transporte/Camiones/Trenes
+          transportation: Transporte
+          utilities: Empresas de servicios públicos
+          venture_capital: Capital de riesgo
+          veterinary: Veterinaria
+          warehousing: Almacenamiento
+          wholesale: Venta al por mayor
+          wine_and_spirits: Vinos y licores
+          wireless: Inalámbrico
+          writing_and_editing: Escritura y edición
+        terms_and_conditions: Certifico que he leído y acepto los <a href='%{url}' target='_blank'>Términos y Condiciones</a>
+      form:
+        your_work_experience_share_info: Su puesto de trabajo se compartirá con otros participantes del programa como parte de su perfil de clase.
+    new:
+      title: Inscripción
+    update:
+      success: Tu inscripción ha sido actualizada con éxito.
+  batches:
+    already_registered:
+      already_applied: Ya has aplicado al programa
+      title: Ya Registrado
+      view_details: Puede ver los detalles de todas sus aplicaciones desde la página %{dashboard}
+      write_to_us: En caso de que necesites ayuda, escríbenos a
+  checkout_successes:
+    show:
+      congrats: "¡Felicidades!"
+      credit_card_statement: El pago aparecerá en tu estado de cuenta de tarjeta de crédito a cargo de %{statement_descriptor}.
+      email_receipt: Te has inscrito a %{program_description}. Te llegará un recibo a tu correo electrónico.
+  client_translations:
+    models:
+      advocate:
+        attributes:
+          email:
+            pattern_mismatch: Por favor ingrese un correo electrónico válido.
+            type_mismatch: Por favor ingrese un correo electrónico válido.
+      payment_requests_form:
+        attributes:
+          coupon:
+            value_missing: Por favor ingrese un código de apoyo económico
+      user:
+        attributes:
+          email:
+            pattern_mismatch: Por favor ingrese un correo electrónico válido.
+            type_mismatch: Por favor ingrese un correo electrónico válido.
+          password:
+            too_short: La contraseña debe tener al menos 8 caracteres.
+    value_missing: Requerido
+  countries:
+    others: Otros
+  course_access_mailer:
+    notify:
+      congrats: Felicidades por haberte inscrito a %{institution_name} &mdash; %{course_name}. El curso comienza el %{course_start_date}.
+      contact_us_html: En EMERITUS esperamos que culmines con éxito el programa. Si tienes alguna pregunta, no dudes en <a href='%{emeritus_support}' target='_blank'>contactarnos</a>.
+      link_access_course: Acceder al curso
+      program_information:
+        text: |
+          Puedes acceder a la plataforma de aprendizaje para comenzar a familiarizarte con ella. Una vez que inicie el curso, nuestro equipo te enviará un recordatorio por correo electrónico con las instrucciones de arranque.<br>
+          La primera semana será de orientación para responder a cualquier duda que puedas tener. Una semana después iniciaremos el primer módulo.
+        title: Información del programa
+      salutation: Hola %{first_name},
+      subject: Bienvenido a %{institution_name} %{course_name}
+  course_preview:
+    pages:
+      e20200930_course_preview_v2:
+        assignments:
+          course_assignments: Ejemplos de asignaciones
+        highlights:
+          course_highlights: Sobre este programa
+        next_steps:
+          apply_now: Aplica ahora
+          copy: copiar
+          coupon_code: "%{coupon_code}"
+          coupon_subtitle: Use código de asistencia para la matrícula
+          coupon_title: Ahorre %{amount} cuando cree una cuenta y presente su solicitud hoy
+          download_brochure: Descargar folleto
+          download_brochure_subtitle: Obtenga más información sobre el programa de estudios, los puntos clave, la experiencia de aprendizaje y más.
+          download_brochure_title: Descargar el folleto del programa desde aquí
+          money_back_guarantee: disponible con garantía de devolución de dinero de 14 días.
+          next_steps: Próximos pasos
+          referals_subtitle: Ofrecemos opciones de descuento cuando se une a sus colegas.
+          referals_title: Compartir con amigos
+          schedule_a_call: Programe una llamada con un asesor de programas
+          schedule_a_call_subtitle: Hable con uno de nuestros expertos en programas y obtenga respuestas a sus preguntas.
+          watch_videos: Ver videos
+          watch_videos_subtitle: Comprenda cómo se imparte el curso viendo los videos destacados
+        sign_up_today:
+          apply_now: Aplica ahora
+          money_back_guarantee: disponible con garantía de devolución de dinero de 14 días.
+          sign_up_today: Regístrese hoy y ahorre %{amount} con %{coupon_code}
+      video_carousel:
+        video_lectures: Selección de Video Conferencias
+  course_preview_mailer:
+    access:
+      body: Gracias por tu interés en %{school_name} - %{program_description}. Para acceder a tu vista previa gratuita del curso, haz click en el botón de abajo.
+      cta_text: Acceder a la vista previa del curso
+      salutation: Hola %{first_name},
+  custom_forms:
+    errors:
+      salesforce_name_repeated: deben tener solo un campo por cada nombre de atributo en salesforce
+  date:
+    formats:
+      default: "%e de %B del %Y"
+      medium: "%d de %b del %Y"
+  diplomas:
+    status:
+      approved: Aprobada! — Pago pendiente
+      declined: Aplicación rechazada
+      documents_pending: Documentos pendientes
+      in_progress: Aplicación en progreso
+      post_admission: Aprobada! — Documentos pendientes
+      references_pending: Referencias pendientes
+      under_review: Aplicación en revisión
+  document_mailer:
+    notify_discrepancy:
+      notice: Hay una o más discrepancias en los documentos que ha enviado. Puede verlas en su tablero.
+      reupload_request: Por favor, rectifique las discrepancias y cargue nuevamente los documentos revisados. La revisión de su solicitud estará en espera hasta que recibamos los documentos nuevamente.
+      salutation: Hola %{candidate_name},
+      subject: Discrepancias en los documentos de su aplicación
+  email_capture:
+    show:
+      title: Obtén tu cupón
+  emails:
+    confirmation:
+      email_sent_message: Un email fue enviado para confirmar tu cuenta
+      link_description: 'Para activar tu cuenta, por favor haz click en el botón de abajo para verificar tu dirección de correo electrónico:'
+      link_text: Verificar cuenta
+      salutation: Estimado/a %{first_name},
+    footer_html: "&copy; EMERITUS Institute of Management | Committee for Private Education No. 201510637C | Período: 29 Marzo 2018 — 28 Marzo 2022"
+    password_instructions:
+      description_html: "¿Olvidaste tu contraseña? Haz click en el botón de abajo para restablecerla."
+      link_description: El link permanecerá activo por 24hs a partir de la recepción de este email.
+      link_text: Restablecer contraseña
+      salutation: Hola %{name},
+    receipt_footer_html: 'EMERITUS Institute of Management | Committee for Private Education No. 201510637C | Period: 29 March 2018 — 28 March 2022 | GST Registration No.: 201510637C<br><br>78 Shenton Way #20-02 Singapore 079120'
+  enrollment_forms:
+    entry_form:
+      previous_step_invalid_error: Un paso que previamente se llenó es inválido. Por favor regrese al principio y revise cada paso, en caso de que uno de los requerimientos haya cambiado.
+    file_field:
+      label: Subir Archivo
+      remove_file_button_title: Remover archivo
+    form:
+      complete_application: Completar aplicación
+      mandatory_fields: Todos los campos son obligatorios a menos que se indique lo contrario.
+      partial_submit: Guardar
+      submit: Guardar & Continuar
+    repetition_buttons:
+      add: "+ Agregar %{repeated_section}"
+      remove: Quitar
+  enrollment_origins:
+    enrollment_identifier: Al menos un identificador de enrollment (external o sfid) debe estar presente.
+  enrollment_success:
+    show:
+      application_submitted: Tu aplicación ha sido enviada
+      check_application_status: Puedes consultar el estado de la aplicación completa en tu panel.
+      review_statement: El Comité de Admisiones de %{school} evaluará la aplicación completada y responderá cuando haya una decisión tomada. El proceso de revisión dura aproximadamente dos semanas a partir de la fecha de recepción de la aplicación completa.
+      thank_you: Gracias por enviar tu aplicación a %{program_description}.
+  enrollments:
+    certificate_actions:
+      access_course: Acceder al curso
+      apply_now: Aplicar ahora
+      invite: Invitar a un colega
+      notify_future_batch: Notificarme
+      pay_now: Pagar ahora
+      pay_now_title: Proceder al pago
+      resume_application: Continuar con la aplicación
+    course_catalog_banner:
+      alt: Banner de catálogo de cursos
+      title: Obtenga más información sobre nuestro catálogo de cursos
+    date_change:
+      error: Ha ocurrido un error al intentar cambiar la fecha de tu aplicación
+      error_already_enrolled_to_batch: Ya estás interesado en este curso para esa fecha. Verifique en su Panel.
+    diploma_actions:
+      access_course: Acceder al curso
+      invite: Invitar a un colega
+      notify_future_batch: Notificarme
+      pay_now: Pagar ahora
+      pay_now_title: Proceder al pago
+      resume_application: Continuar con la aplicación
+      resume_title: Continuar con la aplicación
+    empty:
+      all_courses: Ver programas
+      no_enrollments: No te has registrado a ningún programa. Una vez que lo hagas, los verás aquí.
+    enrollment:
+      change_date: cambiar fecha
+      deadline_extended: 'Fecha Límite de Solicitud Extendida: <strong>%{date}</strong>'
+      pay_now: Pagar ahora
+      pay_now_title: Proceder al pago
+      payment_due: "%{amount} vence el %{date}"
+      starts: Empieza el
+    index:
+      completed_courses: Cursos Completados
+      current_courses: Cursos Actuales
+      interested_courses: Cursos de Interés
+      title: Mi Panel
+    interested_course:
+      apply_now: Inscríbite ahora
+      change_date: cambiar fecha
+      deadline_extended: 'Fecha Límite de Solicitud Extendida: <strong>%{date}</strong>'
+      invite: Invitar a un colega
+      notify_future_batch: Notificarme
+      starts: Empieza el
+    online_degree_actions:
+      access_course: Acceder al curso
+      invite: Invitar a un colega
+      notify_future_batch: Notificarme
+      pay_now: Pagar ahora
+      pay_now_title: Proceder al pago
+      resume_application: Continuar con la aplicación
+      resume_title: Continuar con la aplicación
+    reupload_files:
+      documents: Documentos
+      needs_attention: Requieren atención
+      submit: Actualizar archivos
+  error_page:
+    internal_error: Ups. Eso es un error.
+    not_found: Ups. Esta página no existe.
+    unnaceptable: Ups. Lo sentimos, pero algo salió mal.
+  errors:
+    messages:
+      blank: requerido
+  fields:
+    changes_field:
+      show:
+        table_body:
+          empty: Sin cambios
+        table_headers:
+          changes:
+            new_value: Valor nuevo
+            previous_value: Valor anterior
+          field: Campo
+    csv_field:
+      show:
+        table_body:
+          empty: Vacia
+    globalize:
+      array_field:
+        form:
+          new_option: Nueva opción
+          option: Opción
+    table_field:
+      show:
+        table_body:
+          empty: Vacía
+  forms:
+    bulk_invitation_form:
+      default_custom_message: Estoy tomando este curso, y creo que también te podría interesar
+    payment:
+      errors:
+        already_paid: Ya has realizado este pago.
+        pending_exists: Tu pago esta siendo procesado. Por favor espere.
+    payment_requests_form:
+      errors:
+        coupon:
+          expired: El código de asistencia de matrícula está vencido
+          invalid: El código de asistencia de matrícula es inválido
+        coupon_code:
+          empty: Por favor ingrese un código de Asistencia de Matrícula
+      invalid_number_of_installments: El número de cuotas no es válido.
+  friend_reward_mailer:
+    not_eligible:
+      body: No eres candidato para un cupón de referidos porque ya has referido a alguien a este curso.
+      contact_us: Si crees que esto es un error, por favor <a href="mailto:%{email_contact_us}">contáctanos</a> si tienes alguna pregunta.
+      cta: Invita más Colegas y Ahorra
+      farewell: "¡Gracias!"
+      salutation: Hola,
+      savings: Aún puedes ahorrar dinero. Cuando uno de tus referidos se mantiene inscripto una vez finalizado nuestro período de reembolso, automáticamente recibirás %{reward_amount} de vuelta de tu compra.
+      subject: No pudimos procesar tu cupón de descuento.
+    send_coupon:
+      body: Gracias por recomendar a un amigo para tomar el progama de %{program_description}. Como recompensa, te enviamos un cupón por %{coupon_amount} para tu inscripción. Ingresa el código de descuento al realizar el pago para obtener tu recompensa.
+      cta: Únete ahora
+      disclaimer: Ingresa este código en la sección de cupón antes del pago y haz clic en "aplicar" para recibir el descuento. Solo se puede utilizar un código por estudiante. Este código es válido sólo para el programa %{program_description}.
+      farewell: "¡Gracias por pedir tu cupón!"
+      learn_more: También puedes leer más sobre el curso <a href="%{url}">aquí</a>.
+      salutation: Hola,
+      subject: Aquí está tu recompensa de %{coupon_amount} para unirte a %{program_description}
+      your_coupon: 'Tu cupón: <strong>%{coupon_code}</strong>'
+  group_enrollment_mailer:
+    reset_password_instructions:
+      description_html: 'Has sido invitado a participar en el curso, %{course_name}, comenzando en la fecha: %{course_start_date}. <br/><br/> Nombre: %{first_name} %{last_name} <br/> Nombre de Usuario: %{user_name}<br/>'
+      link_description: El link permanecerá activo por 24hs a partir de la recepción de este email.
+      link_text: Comienza
+      role: 'Rol: %{role}'
+      salutation: Hola %{name},
+      subject: Invitación al curso
+  group_enrollments:
+    validations:
+      empty: Vacio
+      header_validation: 'tiene alguna(s) columna(s) faltante(s): %{columns}'
+  helpers:
+    label:
+      marketing__landing_page_template:
+        revisions_enabled: Revisiones activadas
+        slug: Slug | URL
+      marketing__landing_page_variation:
+        slug_with_force_params: Slug | URL
+      marketing__page:
+        slug: Slug | URL
+      salesforce__academic_institution:
+        flipper_id: Flipper id
+      salesforce__program:
+        flipper_id: Flipper id
+      school:
+        course_catalog_banner: Banner de catálogo de cursos (960x125 y 500kb o menos)
+      user:
+        canvas_account_created: Autenticación EE para Canvas
+        company: Compañía
+        country: País
+        email: Correo electrónico
+        first_name: Nombre
+        last_name: Apellidos
+        password: Contraseña
+        password_confirmation: Confirmar contraseña
+    placeholder:
+      message:
+        company: Compañía
+        country: País
+        email: Correo electrónico
+        first_name: Nombre
+        last_name: Apellidos
+        password: Contraseña
+        password_confirmation: Confirmar contraseña
+  iframes:
+    custom_form_entries:
+      form:
+        explicit_consent: Estoy de acuerdo en recibir información de %{nickname} y Emeritus sobre este programa y otros programas relevantes. <a href="https://latam.emeritus.org/politica-de-privacidad" target="_blank">Política de privacidad</a>
+        implicit_consent: Al hacer clic en el botón de abajo, usted acepta recibir información de %{nickname} y Emeritus sobre este programa y otros programas relevantes. <a href="https://latam.emeritus.org/politica-de-privacidad" target="_blank">Política de privacidad</a>
+  invitation_mailer:
+    invite:
+      about_this_course: Acerca de este curso
+      course_description: "%{full_name} está cursando el programa de %{program_description} en %{school_name}, y le gustaría que te unieras como compañero de clase."
+      description: Nuestros estudiantes nos aseguran que cuando toman el curso con compañeros de trabajo, es más probable implementar mejoras en su organización. Esperamos que logres lo mismo.
+      footer: Equipo de Admisiones
+      greeting: Feliz aprendizaje
+      landing_page_link_text: <a href="%{url}">Leer más</a> acerca del curso aquí
+      message_from: 'Mensaje de %{full_name}:'
+      program_advisor_email_text: <a href="mailto:%{email}?subject=Interesado en %{course_name}&body=Hola, escuché acerca de este curso por parte de un estudiante, y estoy interesado en saber más.%0D%0AGracias,">Contacta</a> a uno de nuestros asistentes de programa para responder tus preguntas.
+      salutation: Hola %{full_name},
+      signup: Regístrate
+      subject: Únete a %{full_name} y cursa %{description}
+      video_link_text: <a href="%{url}">Escucha más sobre la experiencia del curso</a> y cómo puede ayudarte, dicho por sus profesores.
+    notify_success:
+      description: Tu colega %{full_name} se ha unido a %{program_description}.
+      footer: "%{program_description} Equipo de admisiones"
+      greeting: Feliz aprendizaje,
+      more_impactful_with_colleagues: Nuestros alumnos nos dicen que tomar cursos con amigos o colegas facilita el intercambio de ideas y los ayuda a acelerar su impacto en una organización. Esperamos que encuentres lo mismo.
+      salutation: Hola %{full_name},
+      subject: "¡Felicidades! %{referred_user} se ha unido a %{description}"
+  invitations:
+    create:
+      success: Las invitaciones fueron enviadas correctamente.
+    form:
+      add_another: Agregar otro
+      cancel: Ahora no
+      errors: Por favor llene todos los pares de nombre y email que quiera para continuar.
+      submit: Enviar Invitación
+      subtitle: Invita a tus compañeros a tomar este curso y construir así una comprensión compartida de lo que se necesita para generar un mayor impacto en tu organización.
+      title: Invita a tus colegas
+  layouts:
+    admin:
+      application:
+        production_warning: 'Advertencia: Estás modificando el entorno de producción'
+  learner:
+    content:
+      canvas_links:
+        canvas_link:
+          new_tab_message: Este enlace se abrirá en una nueva pestaña.
+      external_links:
+        external_link:
+          new_tab_message: Este enlace se abrirá en una nueva pestaña.
+    course_modules:
+      show:
+        back: Atrás
+        locked: Este módulo no está abierto aún. Por favor intente nuevamente más adelante.
+    courses:
+      header:
+        heading: Hola
+        subheading: días para el comienzo del curso
+    discussions:
+      show:
+        community_info: Utilice nuestra comunidad en línea para tener conversaciones, información, establecer contactos, publicar artículos y hacer preguntas.
+        join_community: Únete a la comunidad en línea de %{school_name}.
+        join_community_button: Únete a la comunidad
+    profiles:
+      delete_image_attachment:
+        delete_image_success: Imagen borrada con éxito
+      edit:
+        heading_main: Tu Perfil
+      form:
+        about_me: Acerca de mí
+        cancel: Cancelar
+        city: Ciudad
+        country: País
+        current_company: Empresa actual
+        current_role: Cargo actual
+        delete_image: Eliminar imagen
+        email: Correo electrónico
+        first_name: Nombre
+        industry:
+          advertising: Publicidad
+          agriculture: Agricultura
+          banking_and_financial_services: Bancos y servicios financieros
+          civil_construction: Construcción civil
+          consulting: Consultoría
+          ecommerce: E-commerce
+          education: Educación
+          electronics_or_hardware: Electrónica / Hardware
+          energy: Energía
+          fast_moving_consumer_goods: Bienes de consumo de rápido movimiento
+          healthcare: Cuidado de la salud
+          human_resources_service_provider: Proveedor de servicios de recursos humanos
+          industrial_goods: Bienes industriales
+          it_products: Productos de informática
+          it_services: Servicios de informática
+          media: Media
+          other: Otros
+          real_estate: Bienes raíces
+          retail: Ventas
+          telecommunications: Telecomunicaciones
+          tourism_or_hotels_or_restaurant: Turismo / Hoteles / Restaurants
+          transport_or_logistic: Transporte - Logística
+        job_function:
+          accounting_and_control: Contabilidad y control
+          consulting: Consultoría
+          customer_support_service: Atención al cliente / Servicio
+          engineering: Ingeniería
+          finance: Finanzas
+          general_management: Administración general
+          human_resources_management: Administración de recursos humanos
+          information_technology: Tecnologías de la información
+          learning_and_development: Aprendizaje y desarrollo
+          legal: Legal
+          logistics_purchasing: Logística / Compras
+          manufacturing_and_operations: Fabricación y operaciones
+          marketing_communications_pr: Marketing / Comunicaciones / Relaciones públicas
+          medical: Médico
+          project_management: Gestión de proyectos
+          research_and_development: Investigación y desarrollo
+          sales_and_business_development: Ventas y desarrollo comercial
+          strategy_corporate_planning: Estrategia / Planificación Corporativa
+        last_name: Apellidos
+        linked_in_profile_url: Perfil de LinkedIn
+        state: Estado
+        update_profile: Actualizar Perfil
+      new:
+        heading_main: Tu Perfil
+      show:
+        back_link: Atrás
+        edit_link: Editar Perfil
+        heading_about: Acerca
+        heading_connect: Conectar
+        heading_main: Tu Perfil
+    shared:
+      nav:
+        connect: Conectar
+        discuss: Discutir
+        profile_dropdown:
+          dashboard: Mi Panel
+          log_out: Cerrar Sesión
+          profile: Perfil
+          settings: Ajustes
+        programs: Programas
+        refer: Referir
+        support: Soporte
+    students:
+      list:
+        all: Todos
+        heading: Conectar
+        subheading: Conoce a tus compañeros de clase
+  loading_msg: cargando...
+  log_in: iniciar sesión
+  log_in_question: "¿Iniciar sesión?"
+  log_out: cerrar sesión
+  marketing:
+    landing_page_templates:
+      course_preview_modal:
+        access_lectures: Accede a la primera semana de video-clases
+        coupon_and_brochure: Te enviaremos vía email tu cupón y el folleto del programa
+        explore: Explora la experiencia de aprendizaje a través de una vista previa del programa
+        no_credit_card: No se requiere tarjeta de crédito
+        preview_course: Vista previa del programa, gratis
+        privacy_policy: Política de privacidad
+        program_brochure_email: El folleto del programa ha sido enviado a tu email
+        welcome: "¡Bienvenido! Obtén tu cupón por %{amount}"
+      deadline_info:
+        starts_on: COMIENZA EL
+      extended_deadline_info:
+        application_deadline: Plazo extendido para aplicar
+        deadline_extended: FECHA LÍMITE AMPLIADA
+      extended_deadline_modal:
+        deadline_extended_until: La fecha de aplicación se ha extendido hasta
+        deadline_text: La primera semana es un módulo de orientación solamente, no hay clases del programa y las sesiones quedan grabadas. Únete al programa online %{program} e impacta desde ahora tu carrera profesional.
+      flexi_payment_modal:
+        cross_title: Cerrar modal de opciones de pago
+      footer:
+        apply_now: Aplica Ahora
+        click_here: Da clic aquí
+        early_registrations: Regístrate lo antes posible. El cupo es limitado.
+        flexible_options: Opciones de pagos flexibles disponibles.
+        learn_more: para más información.
+        learn_more_capitalized: Conoce más.
+        learn_more_title: Informate acerca de pagos flexibles disponibles
+        preview_course: Vista previa del programa, sin costo
+      form:
+        submit_button:
+          title:
+            referrals: Obtén tu cupón
+            referrals_and_course_preview: Obtén tu cupón y vista previa del programa
+      full_template_hero_header:
+        executive_education: EXECUTIVE EDUCATION
+      hero_banner:
+        enroll_as_a_group: Mejora el rendimiento de tu Equipo de Ventas con <i>%{title}</i> — Inscríbete en grupo hoy mismo!
+        enroll_today: Inscríbete hoy mismo al programa <i>%{title}</i> online.
+      hero_banner_apply:
+        apply_now: Aplica Ahora
+        deadline_extended: 'Plazo extendido para aplicar:'
+        enrollment_deadline: 'Fecha límite de inscripción:'
+        hero_banner_text: No es tarde para unirte a más de 30.000 estudiantes de más de 150 países que ya han tomado alguno de nuestros programas.
+        program_starts: 'El programa inicia:'
+      hero_banner_course_preview:
+        preview_course: Vista previa del programa sin costo
+      hero_banner_form:
+        claim_coupon: Obtén tu cupón
+        get_brochure: Obtén el folleto
+        privacy_policy: Política de privacidad
+      hero_banner_group_enrollment:
+        widget_title: Ve cuánto puedes ahorrar con una inscripción de grupo
+      hero_banner_thank_you:
+        apply_now: Aplica Ahora
+        download_brochure: Descarga el Folleto
+        easily: ''
+        or: o
+        schedule_a_call: Agenda una llamada
+        speak_program_advisor: Habla con un asesor de programa.
+        thank_you_message: Gracias por tu interés en el programa <strong>%{title}</strong>. Nuestro asesor de programa te contactará pronto.
+        with_program_advisor: con el asesor de programa para saber más.
+      hero_header:
+        executive_education: EXECUTIVE EDUCATION
+      hero_info:
+        duration: DURACIÓN
+        flexible_payment: Opciones de precios flexibles disponibles
+        program_fee: Costo
+        referral_discount: o obtén <strong>%{amount} de descuento</strong> con un cupón de referido
+        special_group: Precio especial para grupos
+      hero_info_price:
+        application_fee: "%{amount} cuota de aplicación"
+        flexible_payment: Opciones de precios flexibles disponibles
+        payment_options_title: Ver opciones de precios flexibles
+        referral_discount: o obtén <strong>%{amount} de descuento</strong> con un cupón de referido
+        special_group: Precio especial para grupos
+      referrals_banner:
+        close_referral_discounts_information: Cerrar información sobre descuentos por referidos
+        invite_colleagues: Invite a sus Colegas y Ahorre %{discount}
+        invite_now: Invitar Ahora
+      referrals_email_capture_modal:
+        claim_coupon: Para obtener su cupón por %{reward} para el programa <strong>%{title}</strong> complete el formulario por favor.
+        welcome: Bienvenido
+      special_group_enrollment_modal:
+        complete_form: complete el Formulario para continuar, o envíe un email
+        email: admisiones.latam@emeritus.org
+        more_information: por más información.
+        please: Por favor,
+        send_email: envíe un email a
+        special_pricing: Precio especial para inscripción en grupo
+        special_pricing_text: El programa ofrece un descuento hasta de 20% si te inscribes con tus colegas.
+        subject: Consulta por Inscripción en Grupo
+      sticky_nav_course_preview:
+        preview_course: vista previa del programa sin costo
+        preview_course_free: vista previa del programa SIN COSTO!
+      sticky_nav_legacy:
+        apply_now: Aplica Ahora
+        download_brochure: Descarga el Folleto
+        duration: DURACIÓN
+        flexible_payment: Opciones de precios flexibles disponibles
+        group_enrollment_cta: Inscripción de grupo
+        program_fee: Costo
+        special_group: Precio especial para grupos
+      wholesies_sections:
+        body_cta:
+          apply_now: Aplica Ahora
+          download_brochure: Descarga el Folleto
+          preview_program: Vista previa del programa, sin costo
+        case_studies:
+          load_more: Ver más
+        faculty_members:
+          more_info: Más información
+        program_experiences:
+          title: "%{experience}"
+    program_card:
+      learn_more: Conoce más
+  models:
+    errors:
+      alphanumeric: debe ser alfanumérico
+      date:
+        earlier_than: debe ser anterior a %{field}
+      email: debe ser un correo electrónico
+      globalize_array:
+        blank: no puede tener valores vacíos
+        empty: debe tener un mínimo un valor
+      host_name: debe ser un host válido
+      non_updatable: no puede ser actualizado
+      number:
+        compared_value_not_a_number: debe tener un valor numérico en el campo de comparación %{field}
+        operations:
+          greater_than_or_equal_to: debe ser mayor o igual al valor en %{field}
+      phone: debe ser un número de teléfono válido
+      program_sfid: el programa es inválido
+      required_objects: "%{required_objects} deben existir"
+      string: debe tener máximo %{limit} caracteres
+      url:
+        domain: la URL debe pertenecer al dominio %{domain}
+        format: no es una url válida
+        protocols: 'debe tener el formato de una url. protocolo(s) permitido(s): %{protocols}'
+        without_query_params: debe tener el formato de una url, sin parámetros.
+      user_password: debe tener al menos 8 caracteres.
+    marketing:
+      errors:
+        settings: 'tiene valores inválidos en los siguientes atributos: %{attributes_with_invalid_value}.'
+  navigation:
+    errors:
+      unauthorized: no estás autorizado para realizar esta acción
+  notify_future_batch:
+    message: Serás notificado a tu email cuando una nueva fecha de comienzo esté disponible para %{program_name}
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%n"
+        precision: 2
+        separator: ","
+        unit: ''
+  online_degrees:
+    enrollment_mailer:
+      notify_acceptance:
+        complete_application_button: Completa tu inscripción
+        congratulations: Te felicitamos por haber sido aceptado en %{program_name} de %{school_name}.
+        payment_calendar: Calendario de pagos
+        payment_calendar_description: Tal como lo indica la carta financiera, el primer pago del programa deberá ser cubierto en una semana, favor de dar clic en el botón inferior. En caso de no cubrir el pago antes de la fecha acordada, estarás en riesgo de perder tu lugar para este inicio de clases.
+        program_cost: Costo del programa
+        program_cost_description: El costo total del programa es %{formatted_cost} y el desglose específico de pagos se comparte en la carta de compromiso financiero.
+        reason: Te escribimos para compartir información adicional sobre el proceso de inscripción.
+        salutation: Hola %{first_name},
+        subject: Siguientes pasos para procesar su inscripción
+    errors:
+      enrollment_form:
+        reference_email: los emails de referencia deben ser diferentes
+        word_limit: debe tener como máximo %{count} palabras
+      section:
+        missing_repetititon_field: Secciones con repetición deben incluir nombre, repeticiones mínimas, repeticiones máximas
+        repetitions_invalid: Repetición mínima debe ser menor que repetición máxima
+    reference_success:
+      show:
+        feedback_received: Su respuesta ha sido recibida correctamente.
+        thank_you: Gracias!
+    references:
+      edit:
+        description: Hola %{reference_first_name}, has sido seleccionado como una referencia por %{candidate_first_name} %{candidate_last_name}, quien puede proveer información detallada acerca de las habilidades de liderazgo y futuras aspiraciones laborales del aplicante. Para evaluar mejor la aplicación para %{program_name} le pedimos su evaluación en los siguientes puntos.
+        thank_you: Gracias por ser una referencia para %{candidate_first_name}
+      form:
+        mandatory_fields: Todos los campos son obligatorios a menos que se indique lo contrario.
+        submit: Enviar
+    status:
+      approved: Aprobada! — Pago pendiente
+      declined: Aplicación rechazada
+      documents_pending: Documentos pendientes
+      in_progress: Aplicación en progreso
+      references_pending: Referencias pendientes
+      under_review: Aplicación en revisión
+  payment_mailer:
+    automatic_payment_failed:
+      contact: <a href="mailto:%{contact_us_email}">Contáctanos</a> si tienes alguna duda o requieres apoyo.
+      make_payment: Realizar el pago
+      plead_payment: Por favor, realiza el pago de %{installment_amount} de forma inmediata. Puedes actualizar tu información de tarjeta de crédito desde tu página de pagos.
+      positions:
+        first: primer
+        last: último
+        nth: "%{number}to"
+        second: segundo
+        third: tercer
+      salutation: Hola %{first_name},
+      subject: Pago fallido para %{program_name}
+      unable_to_process: No fue posible procesar tu pago con tarjeta de crédito para el %{number_of_installment} pago con fecha de %{due_on} para el programa %{program_name}
+    payment_received:
+      application_fee_for: Cuota de aplicación a
+      batch_starts: Inicia
+      card_info: "%{card_type} %{last_4} el %{date}"
+      exchange_rate: 'Nota: Tipo de cambio de USD @ 1,3614 para fines de informes GST (Source: www.hsbc.com.sg)'
+      outstanding_balance: Pago pendiente
+      paid_today: Pagado hoy
+      payment_descriptor: El cargo aparecerá en tu estado de cuenta a nombre de "%{descriptor}"
+      payment_received_from: 'Pago recibido de:'
+      subject: Recibo de EMERITUS
+      subject_with_university: Recibo de %{school}
+      subtotal: Subtotal
+      tax: Impuesto
+      total: Total
+      total_due: Pago total
+      tuition_assistance: Ayuda para la matrícula
+    payment_schedule:
+      number_of_remaining_installments: "%{count} cuotas restantes"
+      payment_request_amount: Cantidad
+      payment_request_date: Día de pago
+      remaining_installments: El pago pendiente se cargará automáticamente a tu tarjeta de crédito en la(s) fecha(s) de vencimiento.
+  payment_request_mailer:
+    automatic_payment_reminder:
+      reminder: |
+        Te recordamos que el %{installment} pago del programa %{program_name} (%{amount}) vencerá el %{due_date}. En esa fecha, realizaremos un cargo automático a tu tarjeta de crédito.
+        Si el pago se realiza correctamente recibirás un recibo; o bien, una
+        notificación en caso de que la transacción falle.
+        Si tienes alguna duda, por favor <a href="mailto:%{contact_us_email}">contáctanos</a>
+      salutation: Hola %{first_name},
+      subject: Recordatorio de pago de EMERITUS
+      subject_with_university: Recordatorio de pago de %{school}
+  payment_requests:
+    coupon_section:
+      apply: Aplicar
+      remove: Remover
+      success: Ayuda para la matrícula con un valor de %{amount} aplicada
+      tuition_assistance_code: Código de ayuda para la matrícula
+    index:
+      amount: Cantidad
+      due: Deuda
+      due_date: Fecha de vencimiento / pago
+      invoice: Recepción de facturas
+      not_available: No Disponible
+      paid: Pagado
+      pay: "(Pagar)"
+      pay_title: Pagar programa ahora
+      program: Programa
+      refunded: Reembolsado
+      status: Estado
+      title: Pagos
+      view_download: Ver/Descargar
+      view_download_title: Ver recibo/factura o descargarlo
+    money_back_guarantee:
+      description: Si no estás satisfecho con el curso, contáctanos antes de que transcurran %{refund_period} días desde la fecha de inicio del curso y te reembolsaremos el pago completo, sin preguntas.
+      heading: Reembolso garantizado por %{refund_period} días
+    new:
+      pay_now: Pagar ahora y asegurar mi lugar
+      questions: "¿Dudas? Llámanos al"
+      secure_checkout: Pago Seguro
+      secure_my_seat: Asegurar Mi Lugar
+      secure_transactions: Todas las transacciones son seguras y encriptadas
+      title: Opción de Pago
+    order_details:
+      your_order_details: Detalles de tu orden
+    payment:
+      choose_payment_method: Elija su método de pago
+      due_now: A pagar ahora
+      labels:
+        card_cvc: CVC
+        card_expiration: MM/YY
+        card_number: Número de Tarjeta
+      singapore_gst: Para los residentes de Singapur, se aplicó un %{percentage}% de GST al precio total
+    payment_options:
+      choose_payment_option: Elija su opción de pago
+      first_payment_reminder: El primer pago de <strong>%{amount} vence hoy</strong>
+      full_payment:
+        name: Pago completo
+      n_payments:
+        name: "%{number_of_installments} pagos"
+        schedule: Calendario de %{number_of_installments} pagos
+      see_payment_schedule: Ver calendario de pagos
+    payment_schedule:
+      amount: Valor
+      payment_date: Vencimiento
+      today: Hoy
+      total: Total
+    pending_credits:
+      multiple_credits: Tienes %{amount} en créditos ganados por invitar amigos. Estos créditos te serán reembolsados si tus amigos se mantienen inscriptos una vez finalizado el período de devolución.
+      single_credit: Tienes un crédito de %{amount} ganado por invitar a un amigo. Este crédito te será reembolsado si tu amigo se mantiene inscripto una vez finalizado el período de devolución.
+    update:
+      error:
+        due_date:
+          after_previous_payment: Debe ser al menos %{number} horas después que el pago anterior
+          before_batch: Debe ser anterior a la fecha final del curso
+          before_next_payment: Debe ser al menos %{number} horas antes que el próximo pago
+          past: Debe ser una fecha a futuro
+  payments:
+    cancel:
+      description: Su solicitud de pago ha sido cancelada.
+      link: Ver detalles de pago
+      title: Pago No Realizado
+    errors:
+      application_declined: La aplicación ha sido rechazada, no se puede realizar el pago.
+      payment_declined:
+        deadline_expired: No puedes realizar el pago ya que la fecha límite de inscripción ha finalizado.
+    new:
+      application_fee: tasa de solicitud
+      charge_amount: Importe
+      credit_card_method: Tarjeta de Crédito
+      description: Por favor, realiza el pago de la %{subject_text} de %{price}. Obtendrás un recibo electrónico al realizar exitosamente el pago.
+      form:
+        buttons:
+          cancel: Cancelar
+          charge: Pagar
+      installment: cuota
+      paypal_only_full_payment: Disponible para opción de Pago completo
+      positions:
+        first: 1ra
+        last: última
+        nth: ª
+        second: 2da
+        third: 3ra
+    success:
+      credit_card_statement: El pago aparecerá en tu estado de cuenta de tarjeta de crédito a cargo de %{statement_descriptor}.
+      email_receipt_for_installment: Un recibo del pago para %{program_description} fue enviado a tu correo electrónico. Esperamos que estés disfrutando el curso!
+      thanks_for_payment: Gracias por tu pago!
+      title: Pago Exitoso
+  presenters:
+    salesforce:
+      batch:
+        application_deadline: "%{date}"
+        start_date: "%{date}"
+  programs:
+    no_active_batches: Este curso ya no se encuentra activo
+    not_enabled: Este programa no está habilitado
+  refer:
+    applicable_programs:
+      banner: Programas en línea con
+      learn_more: para más información.
+      title: Programas aplicables
+    copy_personal_url:
+      copy: Copiar
+      personal_url: Enlace personal
+      success: "¡Copiado!"
+    email_form:
+      submit_email: Empezar a compartir
+      your_email: Tu correo electrónico
+    instructions:
+      advocate_enrolled:
+        eligible_programs: Cursos elegibles
+        heading: Comparte el conocimiento
+        steps:
+          step_1: Invita a tus colegas a unirse a este curso.
+          step_2: Ellos obtienen <strong>%{friend_reward_amount}</strong> de descuento en el curso.
+          step_3: Por cada persona que se une, tú obtienes un crédito de <strong>%{advocate_reward_amount}</strong> para un futuro curso elegible de %{school} (<a href='%{link_attributes}'">ver lista</a>).
+      advocate_not_enrolled:
+        heading: Generar impacto, juntos
+        steps:
+          step_1: Invita a tus colegas a unirse a este curso contigo.
+          step_2: Ellos obtienen <strong>%{friend_reward_amount}</strong> de descuento en el curso.
+          step_3: Tú obtienes <strong>%{advocate_reward_amount}</strong> por cada persona que se une.
+    new:
+      group_enrollment:
+        email: group-inquiries@emeritus.org
+        link: Manda un email a nuestro equipo de inscripciones en grupo
+        subject: Petición de inscripciones en grupo - %{program_description}
+        title: Quieres unirte en equipo o prefieren pagar todos juntos?
+      or: o
+      share_email: Comparte por correo electrónico
+      share_with_personal_url: Comparte tu enlace personal
+      terms: Términos
+      title: Invita a un Colega y Ahorra
+    share_form:
+      custom_message: Mensaje personalizado
+      default_custom_message: Creo que ambos aprenderemos mucho de este curso, y me gustaría compartirlo contigo. Aquí va un cupón de descuento.
+      emails: 'Para:'
+      errors:
+        emails:
+          invalid_format: debe ser una o más direcciones de correo separadas por comas
+      multiple_emails: Puedes ingresar múltiples destinatarios separados por comas.
+      submit: Enviar
+    success:
+      back: Compartir de nuevo
+      earn_more: Comparte más y gana más
+      keep_sharing: Sigue compartiendo para ganar más recompensas y aumentar el impacto, juntos.
+      or: o
+      sent: "¡Enviado! Cuando tu colega se una al programa y se mantenga inscripto, recibirás un crédito de programa por %{advocate_reward_amount}."
+      share_email: Enviar más correos
+      share_link: Comparte tu enlace personal
+      terms: Términos
+      title: Invita a un Colega y Ahorra
+  reference_mailer:
+    ask_for_inputs:
+      complete: Para evaluar la aplicación, solicitamos sus aportes a las preguntas que encontrará en el siguiente botón.
+      complete_reference_button: Completar Referencia
+      notice: "%{candidate_name} ha aplicado al programa de %{program_name}."
+      reason: Usted ha sido identificado como una de sus referencias profesionales. Favor de proporcionar aportes sobre las habilidades de liderazgo y las aspiraciones profesionales de %{candidate_name}.
+      reminder: Le recordamos, los datos que proporcione serán estrictamente confidenciales y agradecemos tomarse el tiempo para compartir su honesta evaluación del candidato(a).
+      salutation: Hola %{reference_first_name},
+      subject: Verificación de referencia para %{candidate_name}
+  referrals:
+    share_email_mailer:
+      personal_url:
+        body:
+          enrolled: Tu amigo se ha unido a <strong>%{program_description}</strong> de <strong>%{school_name}</strong> y quiere que tú también lo hagas.
+          learner: Tu amigo esta cursando <strong>%{program_description}</strong> de <strong>%{school_name}</strong> y quiere que tú también lo hagas.
+          not_enrolled: Tu amigo esta pensando en cursar <strong>%{program_description}</strong> de <strong>%{school_name}</strong> y quiere que tú también lo hagas.
+        cta: Obtén %{coupon_amount} de descuento
+        custom_message: 'Una nota de %{advocate_name_or_email}:'
+        subject: "%{advocate_name_or_email} te esta enviando %{coupon_amount} de descuento para que te sumes al curso"
+        title: "%{advocate_name_or_email} te esta enviando %{coupon_amount} de descuento para que te sumes al curso"
+  rejected_enrollments:
+    show:
+      explanation: Gracias por aplicar para <strong>%{program_description}</strong>. Apreciamos tu interés en nuestro programa, pero dado el alto volumen de aplicaciones que hemos recibido, estamos incapacitados de ofrecerte un lugar en dicho programa en este momento. Por favor <a href="mailto:%{admissions_email}">contáctanos</a> si tienes alguna pregunta.
+  reports_mailer:
+    course_preview_run_dates:
+      report_date: 'Fecha: %{date}'
+      report_successfully_created: El reporte de fechas de ejecución de Course Previews fue creado exitosamente
+    subject: Program Preview cambio de fechas en el calendario del curso
+  reupload_files:
+    failure: No se pudo actualizar los archivos
+    success: Los archivos fueron actualizados correctamente
+  saml_idp:
+    create:
+      invalid: Email y/o contraseña inválidos.
+    idp:
+      new:
+        log_in: Iniciar sesión
+        lost_password: "¿Olvidó su contraseña?"
+        need_help: "¿Necesita ayuda?"
+  services:
+    braintree:
+      errors:
+        authorized_expired: La autorización de pago expiró.
+        card_declined: Su tarjeta fue rechazada. Contacte al banco o intente con otro método de pago.
+        failed: El pago falló. Intente con otra tarjeta o con otra opción de pagos.
+        gateway_rejected: Se rechazó su pago. Intente con otra tarjeta o con otra opción de pagos.
+        processing_error: Ha ocurrido un error al procesar tu tarjeta. Intente nuevamente más tarde.
+        settlement_declined: El acuerdo fue rechazado. Intente con otra tarjeta o con otra opción de pagos.
+    stripe:
+      error_message_service:
+        automatic_processing_error: Ocurrió un error procesando tu tarjeta.
+        card_declined: Tu tarjeta fue rechazada. Contacte al banco o intente con otro método de pago.
+        expired_card: Tu tarjeta ha expirado. Intente con otro método de pago.
+        incorrect_cvc: El código de seguridad ingresado no es correcto. Intente nuevamente.
+        insufficient_funds: Tu tarjeta no tiene suficientes fondos. Intente con otra tarjeta.
+        insufficient_funds_installments_enabled: Tu tarjeta no tiene suficientes fondos. Intente con otra tarjeta o con otra opción de pagos.
+        no_customer: No se ha encontrado ningún cliente de pagos para tu usuario.
+        processing_error: Ha ocurrido un error al procesar tu tarjeta. Intente nuevamente más tarde.
+  shared:
+    buttons:
+      access_program: Acceder a mi programa
+      dashboard:
+        text: Ir a mi panel
+        title: Ir a mi panel
+    footer:
+      collaboration: En colaboración con EMERITUS
+      copyright_html: |-
+        &copy; EMERITUS Institute of Management
+        Committee for Private Education No. 201510637C | Period: 29 March 2018 — 28 March 2022
+      copyright_short_html: "&copy; EMERITUS Institute of Management"
+    main_header:
+      iso_logo_alt: EMERITUS Institute of Management Isologotype
+      logo_title: EMERITUS Institute of Management
+      university_logo_alt: "%{name} Logo"
+      university_logo_title: "%{name}"
+    nav:
+      catalog: Catálogo de cursos
+      catalog_title: Revisa nuestro catálogo de cursos
+      dashboard: Mi Panel
+      dashboard_title: Ir a tu Panel
+      logout: Cerrar Sesión
+      logout_title: Cierra tu sesión de usuario
+      payments: Pagos
+      payments_title: Revisa tus Pagos
+    notifications:
+      dismiss_flash_notification: Ocultar notificación
+    referrals:
+      form:
+        invite:
+          body: Invita a un amigo o colega y obtén <strong>%{reward_amount} de descuento</strong> en tu curso.
+          cta: Leer Más
+          title: Invita a tus Colegas
+    steps:
+      application: Inscripción
+      payment: Pago
+  sign_up: registro
+  student:
+    access:
+      grant:
+        verify_your_email: Se ha enviado un mensaje a tu correo. Por favor verifica tu correo para acceder al curso.
+    authentication:
+      index:
+        access_online_course: Accede a tu curso
+        email_placeholder: Por favor introduce tu correo
+        submit: Confirmar
+  student_programs:
+    application_deadline: 'Fecha límite de solicitud:'
+    application_deadline_extended: 'Fecha límite de solicitud extendida:'
+    index:
+      title: Programas
+    student_program:
+      application_title: Aplicar a este programa
+      start_application: Iniciar solicitud
+      starts: 'Comienza:'
+  support_requests:
+    create:
+      success: Tu pedido de ayuda ha sido enviado. Nos contactaremos contigo tan pronto como sea posible. Mientras tanto, por favor revisa nuestras <a href='%{zendesk_support_requests_url}' target='_blank'>preguntas frecuentes</a>.
+    new:
+      attachments: Archivos Adjuntos
+      course_instructions: Para una experiencia mas rápida, por favor copia y pega la URL de tu curso de Canvas (e.g. <span>https://student.emeritus.org/courses/1234</span>).
+      faq: preguntas frecuentes.
+      faq_text: Estamos siempre para ayudar. Si quieres buscar por tu cuenta, dirígete a nuestras
+      submit: Enviar
+      title: Contáctanos
+  users:
+    passwords:
+      edit:
+        change_password: Cambiar la contraseña
+        set_password: Establece tu contraseña
+        submit: Confirmar
+      new:
+        go_back_login: Iniciar sesión aquí
+        has_account: Ya tiene una cuenta?
+        lost_password: "¿Olvidó su contraseña?"
+        submit: Restablecer la contraseña
+    registrations:
+      new:
+        compliance_text: Al clickear en Crear una cuenta, aceptas nuestros <a href='https://emeritus.org/terms-of-service/' target='_blank'>Términos de Servicio</a> y reconoces que has leído nuestra <a href='https://emeritus.org/privacy-policy/' target='_blank'>Política de Privacidad</a>. Puede que nos comuniquemos contigo para asistirte en el proceso.
+        create_account: Crea tu cuenta
+        go_back_login: Iniciar sesión aquí
+        has_account: Ya tiene una cuenta?
+        programme__c_blank: Enlace inválido! El programa no fue encontrado
+        submit: Crear una cuenta
+    sessions:
+      new:
+        apply_to_program: "¿Está aplicando a un programa?"
+        create_account: Crea tu cuenta
+        have_account: "¿Ya tienes una cuenta?"
+        lost_password: "¿Olvidó su contraseña?"
+        or: o
+    thank_you:
+      back_to_login: Volver al inicio de sesión
+      back_to_login_title: Ir a la página de registro
+      email_sent: Un email email ha sido enviado para que complete el proceso
+      thanks: Gracias por crear una cuenta
+  values:
+    zendesk:
+      query_type_value:
+        help_with_assignment_extension: Extensión de tarea
+        help_with_course_option: Entendiendo el contenido del curso y los requerimientos de asignación
+        help_with_enrollment_option: Inscripción, pago, certificados
+        help_with_materials_option: Ayuda con el registro, acceso al material y todo lo demás
+  views:
+    admin:
+      custom_forms:
+        show:
+          copied_to_clipboard: Copiado al portapapeles
+          copy_to_clipboard: Copiar al portapapeles
+  zendesk_api:
+    unexpected_error: Sucedió un error inesperado. Por favor, inténtelo de nuevo más tarde.

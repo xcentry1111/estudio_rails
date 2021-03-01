@@ -1,0 +1,25 @@
+<%= simple_form_for(@pagina) do |form| %>
+  <% if pagina.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pagina.errors.count, "error") %> prohibited this pagina from being saved:</h2>
+
+      <ul>
+      <% pagina.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo, id: :pagina_titulo %>
+  </div>
+  <div class="field">
+    <%= form.select :estado, Pagina.estados.keys, {}, class: 'user-roles-select' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

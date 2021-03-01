@@ -1,0 +1,17 @@
+<%= form_with(model: formulariosobsuser, local: true) do |form| %>
+  <% if formulariosobsuser.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(formulariosobsuser.errors.count, "error") %> prohibited this formulariosobsuser from being saved:</h2>
+
+      <ul>
+      <% formulariosobsuser.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

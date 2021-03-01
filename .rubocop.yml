@@ -1,0 +1,531 @@
+require:
+  - 'rubocop-rails'
+  - 'test_prof/rubocop'
+  - './lib/rubocop/cop/emeritus'
+
+AllCops:
+  Exclude:
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - '.git/**/*'
+    - 'tmp/**/*'
+    - 'bin/**/*'
+
+Emeritus/ActsAsMultiTenant:
+  Description: 'Checks that acts_as_multi_tenant is called in models'
+  Enabled: true
+  Exclude:
+    - app/models/formulario.rb
+    - app/models/pagina.rb
+    - db/migrate/**/*
+
+Emeritus/BidirectionalConcern:
+  Description: 'Disables bidirectional dependencies on the concerns'
+  Enabled: true
+  Exclude:
+    - app/controllers/formularios.rb
+    - app/controllers/paginas.rb
+
+Emeritus/DirectWhiteLabelAccess:
+  Description: 'Disables direct calling of white_label_skin'
+  Enabled: true
+  Exclude:
+    - app/presenters/marketing/landing_page_template_presenter.rb
+    - app/presenters/marketing/page_presenter.rb
+    - app/presenters/salesforce/program_presenter.rb
+    - spec/models/program_config_spec.rb
+    - app/services/styling/base_service.rb
+
+Emeritus/Standardizations:
+  Description: 'Disables direct calling of the t and l methods from I18n'
+  Enabled: true
+  Exclude:
+    - app/controllers/users/sessions_controller.rb
+    - app/helpers/application_helper.rb
+    - app/lib/e18n.rb
+    - app/services/braintree_gateway/error_message_service.rb
+    - app/services/mailers/user_mailer_service.rb
+    - app/services/stripe/error_message_service.rb
+    - app/services/stripe/payment_processor_service.rb
+
+Emeritus/Unscoped:
+  Description: 'Disables calling of unscoped'
+  Enabled: true
+
+Emeritus/ProgramWhitelabeledMissing:
+  Description: 'Verifies the existence of the program_whitelabeled? method within a policy'
+  Enabled: true
+  Exclude:
+    - app/policies/admin/**/*
+    - app/policies/profile_policy.rb
+    - app/policies/user_policy.rb
+
+Emeritus/FilterForSubdomainMissing:
+  Description: 'Verifies the existence of the filter_for_subdomain method within a policy scope'
+  Enabled: true
+  Exclude:
+    - app/policies/admin/**/*
+
+Layout/ClassStructure:
+  Enabled: true
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Layout/LineLength:
+  Max: 100
+  # To make it possible to copy or click on URIs in the code, we allow lines
+  # containing a URI to be longer than Max.
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+  Exclude:
+    - config/routes.rb
+    - config/initializers/simple_form.rb
+    - config/initializers/simple_form_bootstrap.rb
+    - app/models/custom_form.rb
+    - app/models/delivery_log.rb
+    - config/initializers/rack_attack.rb
+    - app/jobs/heroku_connect_listener_job.rb
+    - config/environments/production.rb
+    - app/values/country_value.rb
+    - lib/tasks/one_time/populate_academic_institution_*
+    - lib/tasks/heroku_connect_methods_helper.rb
+    - db/migrate/20201019173326_rename_custom_enrollment_tables.rb
+  IgnoredPatterns: ['\A\s*#'] # To exclude this cop from comments
+
+Layout/MultilineMethodCallIndentation:
+  Exclude:
+    - spec/objects/state_machines/*
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Layout/SpaceBeforeFirstArg:
+  Exclude:
+    - app/views/api/**/**/*
+
+# Disabling this cop for the spec folder given that it's a deliberate idiom in rspec
+# See https://github.com/rubocop-hq/rubocop/issues/4222
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
+Lint/DuplicateElsifCondition:
+  Enabled: true
+
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Lint/SuppressedException:
+  Exclude:
+    - spec/support/story_telling.rb
+
+Metrics/AbcSize:
+  # The ABC size is a calculated magnitude, so this number can be an Integer or a Float.
+  Max: 15
+  Exclude:
+    - db/migrate/**/*
+    - app/controllers/iframes/custom_form_entries_controller.rb
+    - app/mailers/online_degrees/enrollment_mailer.rb
+    - app/mailers/payment_mailer.rb
+    - app/mailers/payment_request_mailer.rb
+    - app/forms/custom_form_entry_form.rb
+    - spec/support/mocks/stripe_mocker.rb
+    - app/helpers/application_helper.rb
+    - spec/support/mocks/braintree_mock_data.rb
+    - app/jobs/heroku_connect_listener_job.rb
+    - app/services/canvas/user_service.rb
+    - app/services/data_warehouse/postgres_to_redshift_service.rb
+    - app/services/salesforce/master_coupon_service.rb
+    - app/forms/admin/payment_plan_form.rb
+    - app/controllers/admin/application_controller.rb
+    - app/controllers/users/confirmations_controller.rb
+    - app/mailers/invitation_mailer.rb
+    - app/mailers/reference_mailer.rb
+    - app/services/analytics_log_service.rb
+    - app/services/slack/message_service.rb
+    - app/services/tasks/free_space_service.rb
+    - app/services/group_enrollments/create_objects_service.rb
+    - app/objects/log_analytics/apply_coupon_success_event.rb
+    - app/queries/salesforce/interested_course_query.rb
+    - spec/mailers/user_mailer_spec.rb
+    - spec/mailers/group_enrollment_mailer_spec.rb
+    - app/lib/e18n.rb
+    - app/lib/multi_tenancy/handler.rb
+    - app/forms/admin/user_update_form.rb
+    - lib/tasks/db/anonymization.rb
+    - app/services/marketing/copy_attachments_to_revision_service.rb
+    - lib/tasks/one_time/populate_schools.rb
+    - app/presenters/enrollment_forms/fieldset_presenter.rb
+    - lib/tasks/create_dummy_payment_plans.rb
+    - app/dashboards/emeritus_base_dashboard.rb
+    - lib/tasks/one_time/change_custom_forms_field_latam_country_to_country.rb
+    - spec/support/mocks/filestack_mocker.rb
+
+Metrics/BlockLength:
+  CountComments: false
+  Max: 25
+  Exclude:
+    - Guardfile
+    - config/**/*
+    - spec/**/*
+    - app/admin/**/*
+    - app/objects/state_machines/diploma.rb
+    - app/objects/state_machines/online_degree.rb
+    - lib/tasks/auto_annotate_models.rake
+    - lib/tasks/report/payments.rake
+    - lib/tasks/db/clean_corrupt_data.rake
+    - lib/tasks/marketing/**/*
+    - lib/tasks/provision/heroku_connect.rake
+    - lib/tasks/course_preview/create_pages.rake
+    - lib/tasks/deploy_helper.rake
+    - lib/tasks/coupon_creator.rake
+    - lib/tasks/heroku_connect_helper.rake
+    - lib/tasks/db/production_local_sync.rake
+    - lib/tasks/release_management/staging_commits_check.rake
+    - lib/tasks/fix/double_account_conflict.rake
+    - lib/tasks/one_time/populate_schools.rb
+
+Metrics/BlockNesting:
+  Max: 4
+
+Metrics/ClassLength:
+  CountComments: false
+  Max: 200
+  Exclude:
+    - app/controllers/admin/application_controller.rb
+    - app/controllers/payment_requests_controller.rb
+    - app/presenters/marketing/landing_page_template_presenter.rb
+    - app/services/tasks/free_space_service.rb
+    - lib/tasks/db/anonymization.rb
+    - spec/support/mocks/*
+    - spec/support/page_objects/enrollment_form_page.rb
+
+# Avoid complex methods.
+Metrics/CyclomaticComplexity:
+  Max: 6
+  Exclude:
+    - app/forms/admin/user_update_form.rb
+    - lib/rubocop/cop/emeritus/filter_for_subdomain_missing.rb
+    - spec/support/mocks/stripe_mocker.rb
+    - app/mailers/referrals/share_email_mailer.rb
+    - app/presenters/dashboard_presenter.rb
+    - app/presenters/enrollment_forms/fieldset_presenter.rb
+    - app/presenters/group_enrollments/csv_row_presenter.rb
+    - app/presenters/reference_forms/fieldset_presenter.rb
+    - app/services/paper_trail/association_service.rb
+    - app/services/tasks/free_space_service.rb
+    - spec/support/mocks/braintree_mock_data.rb
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 24
+  Exclude:
+    - app/controllers/program_preview_controller.rb
+    - app/helpers/admin_helper.rb
+    - app/presenters/custom_form_presenter.rb
+    - app/services/tasks/free_space_service.rb
+    - db/migrate/*
+    - lib/tasks/one_time/populate_schools.rb
+
+Metrics/ModuleLength:
+  CountComments: false
+  Max: 200
+  Exclude:
+    - app/values/iso3166.rb
+
+Metrics/ParameterLists:
+  Max: 5
+  CountKeywordArgs: true
+  Exclude:
+    - app/objects/tranche.rb
+    - app/services/salesforce/master_coupon_service.rb
+    - app/forms/enrollment_forms/section_form.rb
+
+Metrics/PerceivedComplexity:
+  Max: 12
+  Exclude:
+    - spec/support/mocks/stripe_mocker.rb
+
+Naming/AccessorMethodName:
+  Exclude:
+    - app/mailers/user_mailer.rb
+    - app/controllers/concerns/marketing/set_experiments.rb
+    - app/controllers/concerns/course_preview/set_experiments.rb
+    - app/controllers/concerns/native_forms/set_experiments.rb
+
+Naming/MemoizedInstanceVariableName:
+  Exclude:
+    - app/controllers/marketing/compiled_pages_controller.rb
+
+Naming/MethodName:
+  Exclude:
+    - app/forms/group_enrollment_form.rb
+
+Naming/PredicateName:
+  Exclude:
+    - spec/support/page_objects/**/*
+    - spec/features/enrollments/index_spec.rb
+
+NotNullColumn:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Rails/ActiveRecordCallbacksOrder:
+  Enabled: true
+
+Rails/ApplicationController:
+  Enabled: false
+
+Rails/BulkChangeTable:
+  Exclude:
+    - db/migrate/20200410122120_change_js_and_sass_library_fields.rb
+
+Rails/Delegate:
+  Enabled: true
+
+Rails/DynamicFindBy:
+  Exclude:
+    - app/models/user.rb
+    - spec/support/page_objects/wholesies_consent_page.rb
+    - spec/support/page_objects/halfsies_page.rb
+
+Rails/FilePath:
+  Enabled: false
+
+Rails/FindById:
+  Enabled: true
+
+Rails/HasManyOrHasOneDependent:
+  Exclude:
+    - app/models/salesforce/*
+    - app/models/payment.rb
+    - app/models/school.rb
+
+Rails/Inquiry:
+  Enabled: true
+
+# Disabling this cop for using before_action filters in controllers along with the administrate gem
+Rails/LexicallyScopedActionFilter:
+  Exclude:
+    - app/controllers/**/*
+
+Rails/MailerName:
+  Enabled: true
+
+Rails/MatchRoute:
+  Enabled: true
+
+Rails/NegateInclude:
+  Enabled: true
+
+Rails/Output:
+  Exclude:
+    - lib/tasks/**/*
+
+Rails/OutputSafety:
+  Exclude:
+    - app/lib/e18n.rb
+    - app/presenters/support_request_form_presenter.rb
+
+Rails/Pluck:
+  Enabled: true
+
+Rails/PluckId:
+  Enabled: true
+  Exclude:
+    - spec/queries/salesforce/attachment_query_spec.rb
+    - spec/support/shared_examples/multi_tenant.rb
+    - spec/validators/salesforce_name_validator_spec.rb
+    - spec/services/salesforce/coupon_service_spec.rb
+
+Rails/PluckInWhere:
+  Enabled: true
+  Exclude:
+    - app/queries/salesforce/program_query.rb
+    - spec/presenters/salesforce/batch_presenter_spec.rb
+
+Rails/RakeEnvironment:
+  Exclude:
+    - lib/tasks/auto_annotate_models.rake
+    - lib/tasks/db/local_sync.rake
+    - lib/tasks/db/review_app_sync.rake
+    - lib/tasks/deploy_helper.rake
+    - lib/tasks/heroku_connect_helper.rake
+    - lib/tasks/init_experiments.rake
+    - lib/tasks/multi_tenancy.rake
+    - lib/tasks/provision/heroku_connect.rake
+    - lib/tasks/release_management/staging_commits_check.rake
+    - lib/tasks/users.rake
+
+Rails/RenderInline:
+  Enabled: true
+  Exclude:
+    - app/controllers/google_site_verification_files_controller.rb
+    - app/controllers/marketing/compiled_pages_controller.rb
+    - app/controllers/marketing/revision_previews_controller.rb
+    - app/controllers/ssl_verification_files_controller.rb
+    - app/presentes/marketing/wholesies/*
+    - spec/presenters/marketing/wholesies/*
+    - spec/presenters/marketing/wholsies/*
+    - spec/presenters/learner/profile_presenter_spec.rb
+
+Rails/RenderPlainText:
+  Enabled: true
+
+Rails/SaveBang:
+  Enabled: true
+  Exclude:
+    - app/models/experiment.rb
+    - app/services/stripe/customer_service.rb
+    - app/services/stripe/payment_processor_service.rb
+    - app/services/stripe/payment_refund_service.rb
+    - app/services/experiments/optimization_mab_service.rb
+    - lib/tasks/stripe.rake
+    - lib/tasks/init_experiments.rake
+    - lib/tasks/init_mab_experiments.rake
+    - spec/forms/**/*
+    - spec/requests/api/v1/experiments_spec.rb
+    - spec/models/experiment_spec.rb
+    - lib/tasks/provision/custom_domain.rake
+    - app/forms/composite/program_config.rb
+    - app/forms/composite/online_degree_admin/enrollment.rb
+    - app/forms/composite/diploma_admin/enrollment.rb
+
+Rails/ShortI18n:
+  Enabled: true
+
+Rails/SkipsModelValidations:
+  Exclude:
+    - app/controllers/api/v1/experiments_controller.rb
+    - app/services/paper_trail/record_version_service.rb
+    - app/models/marketing/landing_page_variation.rb
+    - lib/tasks/db/anonymization.rb
+    - lib/tasks/fix/double_account_conflict_helper.rb
+    - lib/tasks/one_time/backfill_school_id_in_some_models_iv.rb
+    - lib/tasks/one_time/backfill_school_id_in_some_models_iii.rb
+    - lib/tasks/one_time/backfill_school_id_in_some_models_ii.rb
+    - lib/tasks/one_time/backfill_school_id_in_some_models_i.rb
+    - lib/tasks/one_time/backfill_school_id_in_some_models_vi.rb
+    - lib/tasks/one_time/backfill_school_id_in_models_vii.rb
+    - lib/tasks/one_time/backfill_school_id_in_models.rb
+    - lib/tasks/one_time/backfill_school_id_in_models_v.rb
+    - spec/**/*.rb
+
+Rails/WhereExists:
+  Enabled: true
+
+# This cops comes from test-prof
+RSpec/AggregateExamples:
+  Enabled: false
+
+Style/AccessorGrouping:
+  Enabled: true
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/ArrayCoercion:
+  Enabled: true
+
+Style/BisectedAttrAccessor:
+  Enabled: true
+
+Style/BlockDelimiters:
+  EnforcedStyle: braces_for_chaining
+
+Style/CaseLikeIf:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/ExpandPathArguments:
+  Enabled: false
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Style/FormatStringToken:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Style/GuardClause:
+  Enabled: true
+  Exclude:
+    - app/lib/multi_tenancy/handler.rb
+    - app/policies/application_policy.rb
+    - app/validators/date_validator.rb
+
+Style/HashAsLastArrayItem:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashLikeCase:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: false
+
+Style/HashTransformValues:
+  Enabled: false
+
+Style/IfInsideElse:
+  Enabled: true
+  Exclude:
+    - app/validators/reference_email_validator.rb
+
+Style/ModuleFunction:
+  Enabled: false
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/RedundantAssignment:
+  Enabled: true
+
+Style/RedundantFetchBlock:
+  Enabled: true
+
+Style/RedundantFileExtensionInRequire:
+  Enabled: true
+
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+
+Style/RedundantRegexpEscape:
+  Enabled: true
+
+Style/ReturnNil:
+  Enabled: true
+
+Style/SlicingWithRange :
+  Enabled: true
+
+# Disabling this cop for policies https://github.com/varvet/pundit#headless-policies
+Style/StructInheritance:
+  Exclude:
+    - app/policies/**/*
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/WordArray:
+  EnforcedStyle: brackets

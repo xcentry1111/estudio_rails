@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+# -*- coding: UTF-8 -*-
+
+require 'discover-unused-partials'
+require 'optparse'
+require 'yaml'
+
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: discover-unused-partials [options]"
+
+  opts.on_tail("-h", "--help", "Show this message") do
+    puts opts
+    exit
+  end
+
+  opts.parse!
+end
+options[:root] = ARGV.first || '.'
+
+config = File.join(options[:root], 'config', 'discover-unused-partials.yml')
+options.merge!(YAML.load_file(config)) if File.exist?(config)
+
+DiscoverUnusedPartials::find(options)

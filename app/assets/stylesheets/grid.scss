@@ -1,0 +1,7 @@
+.gd_contenedor{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 150px 200px;
+  grid-gap: 1px;
+}
+

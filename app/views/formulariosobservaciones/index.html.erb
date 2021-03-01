@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Formulariosobservaciones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Formulario</th>
+      <th>Title</th>
+      <th>Observation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @formulariosobservaciones.each do |formulariosobservacion| %>
+      <tr>
+        <td><%= formulariosobservacion.formulario %></td>
+        <td><%= formulariosobservacion.title %></td>
+        <td><%= formulariosobservacion.observation %></td>
+        <td><%= link_to 'Show', formulariosobservacion %></td>
+        <td><%= link_to 'Edit', edit_formulariosobservacion_path(formulariosobservacion) %></td>
+        <td><%= link_to 'Destroy', formulariosobservacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Formulariosobservacion', new_formulariosobservacion_path %>

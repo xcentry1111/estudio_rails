@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Formulario:</strong>
+  <%= @formulariosobservacion.formulario %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @formulariosobservacion.title %>
+</p>
+
+<p>
+  <strong>Observation:</strong>
+  <%= @formulariosobservacion.observation %>
+</p>
+
+<%= link_to 'Edit', edit_formulariosobservacion_path(@formulariosobservacion) %> |
+<%= link_to 'Back', formulariosobservaciones_path %>

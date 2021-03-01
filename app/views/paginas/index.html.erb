@@ -1,0 +1,18 @@
+<div class="contenedor">
+  <div class="logo">
+    <img src="/assets/logo.png" alt="">
+  </div>
+  <div class="dialogo">
+    The reason why I don't think the entire  is being replaced is because the row doesn't collapse - though I have tested the HTML outside of JQuery and it works fine.
+  </div>
+  <button class="boton">
+    Iniciar Sesion
+  </button>
+  <a href="#" class="enlace"></a>
+</div>
+
+<div style="background: #fff; width: 100%">
+<% Pagina.all.each do |p| %>
+  <div style="color: black; padding: 15px;"><%= p.id %>: <%= p.description_title %></div>
+<% end %>
+</div>

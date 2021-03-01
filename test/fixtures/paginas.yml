@@ -1,0 +1,16 @@
+# == Schema Information
+#
+# Table name: paginas
+#
+#  id         :integer          not null, primary key
+#  estado     :integer          default("pending")
+#  titulo     :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  titulo: MyString
+
+two:
+  titulo: MyString
