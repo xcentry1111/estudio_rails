@@ -42,9 +42,7 @@ gem 'friendly_id', '~> 5.4.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13.0'
-  gem 'rspec-rails', '~> 4.0.1'
+
   gem 'rubocop-rails', '~> 2.7.1', require: false
   gem 'selenium-webdriver'
   gem 'factory_bot_rails', '~> 6.1.0'
@@ -58,7 +56,11 @@ group :development do
   gem 'annotate', '~> 3.1.1'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rspec-html-matchers', '~> 0.9.2'
+
+
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '~> 2.13.0'
+  gem 'rspec-rails', '~> 4.0.1'
 end
 
 group :test do

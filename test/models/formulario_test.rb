@@ -8,6 +8,7 @@
 #  email       :string
 #  nombre      :string
 #  observacion :text
+#  titulo      :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
