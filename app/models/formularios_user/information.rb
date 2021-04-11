@@ -25,7 +25,6 @@ module FormulariosUser
     end
 
     def full_titulo2
-      byebug
       <<~HTML
       #{titulo}
       HTML

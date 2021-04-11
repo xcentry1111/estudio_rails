@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
 
+  resources :parametros
   resources :productos
   resources :paginas do
     collection do

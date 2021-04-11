@@ -38,6 +38,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'i18n-tasks', '~> 0.9.31'
 gem 'rails-i18n'
 gem 'friendly_id', '~> 5.4.0'
+# Maquinas de estado
+gem 'aasm'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

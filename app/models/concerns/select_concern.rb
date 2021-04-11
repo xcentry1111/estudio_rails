@@ -4,5 +4,4 @@ module SelectConcern
   def description_title_concent
     titulo
   end
-
 end
